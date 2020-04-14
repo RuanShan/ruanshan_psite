@@ -40,7 +40,6 @@ class RouteModel extends Model
 
             // 解析URL
             $info = parse_url($fullUrl);
-            var_dump($info);
 
             $vars = [];
             // 解析参数

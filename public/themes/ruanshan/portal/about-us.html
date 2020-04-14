@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>联系我们</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+
+    <script src="//api.map.baidu.com/api?v=1.3"></script>
+
+    <style>
+        img {
+            max-width: none;
+        }
+    </style>
+    <hook name="before_head_end"/>
+</head>
+<body class="body-white">
+<include file="public@header"/>
+
+
+
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+
+
+<div class="page-body com-info">
+
+     <section class="part part1 middle">
+              <h1>公司介绍</h1>
+              <div class="info-content">
+                   <p>大连软山网络有限公司，简称软山，成立于2014年5月，是一家平凡的互联网技术公司。主要致力于为客户提供互联网技术产品定制和自主产品研发。</p>
+                   <p>定制产品类型包含：移动端H5、手机原生App、基于微信的二次开发、网站等，合作客户包括腾讯网、淘宝网、新浪、正和岛等；自主产品包括：店加、星投票（微信投票）等。</p>
+              </div>
+
+     </section>
+     <section class="part part2">
+           <div class="middle">
+              <h1>公司理念</h1>
+              <div class="info-content">
+                   <p><span class="color2">简单</span> - 复杂</p>
+                   <p><span class="color2">简洁</span> - 繁杂</p>
+                   <p><span class="color2">简约</span> - 极致优雅美</p>
+                   <p style="margin-top:35px;">慢即快-心怀敬畏，脚踏实地，持续成长。</p>
+              </div>
+           </div>
+     </section>
+     <section class="part part1 middle">
+              <h1>公司文化（价值观）</h1>
+              <div class="info-content">
+                   <p>1.做自己，保持简单，保持快乐；</p>
+                   <p>2.带着爱去工作，勇敢探索，做自己喜欢的事情；</p>
+                   <p>3.做在前说在后，先完成后完美，快速迭代；</p>
+                   <p>4.脚踏实地，日积月累，保持向上；</p>
+                   <p>5.做技术，保持平凡；</p>
+                   <p>6.相信现在，相信未来；</p>
+              </div>
+     </section>
+     <section class="part part3"></section>
+     <section class="part part4 middle">
+              <h1>地理位置</h1>
+              <div style="border:#ccc solid 1px; margin-left:40px; margin-top:40px;" id="dituContent">
+
+
+              </div>
+              <div class="content">
+                   <p class="strong">办公地址:</p>
+                   <p>大连市沙河口区尚品天城2号楼 2506室</p>
+                   <p class="br"></p>
+                   <p class="strong">联系电话:</p>
+                   <p><span>13322280797</p>
+                   <p class="br"></p>
+                   <p class="strong">联系邮箱:</p>
+                   <p>contact@ruanshan.com</p>
+                   <p class="br"></p>
+                   <p class="strong">微信:</p>
+                   <p><span>13322280797</p>
+              </div>
+     </section>
+</div><!-- end of page-body info -->
+
+
+
+<script type="text/javascript">
+  init();
+  function init(){
+		width=$(window).width();
+		var leftpx=Math.floor((width-1070)/2);
+		if(leftpx<0){
+			leftpx=76;
+			$('.logo').css({'position':'absolute'});
+			$('.part.part3').addClass('movebg');
+		}else{
+			$('.logo').css({'position':'fixed'});
+		}
+		$('.logo').css({'left':leftpx});
+		color.changecolor(color.selectcolor());
+   }
+
+
+
+
+    $(document).on('mouseover', '.menu li', function(e) {
+			$('.menu li').removeClass('selected');
+			$(this).addClass('selected');
+	});
+
+    $(document).on('mouseleave', '.menu li', function(e) {
+			$('.menu li').removeClass('selected');
+			$('.this').addClass('selected');
+	});
+
+
+
+	function isIpad(){
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["iPad"];
+    var flag = false;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = true;
+            break;
+        }
+    }
+    return flag;
+
+}
+
+
+   window.onscroll=function(){
+		width=$(window).width();
+		var leftpx=Math.floor((width-1070)/2);
+		if(leftpx<0){return}
+		if($(window).scrollTop()>=200){
+			$('.logo').css({'top':0});
+		}else{
+		    $('.logo').css({'top':50});
+		}
+   }
+
+   <php>
+       $company_location=empty($theme_vars['company_location'])?'121.449222,31.193348':$theme_vars['company_location'];
+       $company_location=explode(',',$company_location);
+       $company_location_lng=$company_location[0];
+       $company_location_lat=$company_location[1];
+   </php>
+    //创建和初始化地图函数：
+    function initMap(){
+      var map   = new BMap.Map("dituContent"); // 创建Map实例
+      var point = new BMap.Point("{$company_location_lng}", "{$company_location_lat}"); // 创建点坐标
+      map.centerAndZoom(point, 15); // 初始化地图,设置中心点坐标和地图级别。
+      //map.enableScrollWheelZoom(); //启用滚轮放大缩小
+      //添加缩放控件
+      map.addControl(new BMap.NavigationControl());
+      map.addControl(new BMap.ScaleControl());
+      map.addControl(new BMap.OverviewMapControl());
+
+      var marker = new BMap.Marker(point); // 创建标注
+      map.addOverlay(marker); // 将标注添加到地图中
+      var infoWindow = new BMap.InfoWindow("{$theme_vars.baidu_map_info_window_text|htmlspecialchars_decode|default=''}"); // 创建信息窗口对象
+      marker.openInfoWindow(infoWindow);
+    }
+
+
+
+    initMap();//创建和初始化地图
+</script>
+
+<include file="public@footer"/>
+
+<include file="public@scripts"/>
+<script src="__TMPL__/public/assets/js/opage.js"></script>
+
+<hook name="before_body_end"/>
+</body>
+</html>

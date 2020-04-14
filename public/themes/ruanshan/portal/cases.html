@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{$category.name} {$category.seo_title} {$site_info.site_name|default=''}</title>
+  <meta name="keywords" content="{$category.seo_keywords},{$site_info.site_seo_keywords|default=''}" />
+  <meta name="description" content="{$category.seo_description},{$site_info.site_seo_description|default=''}">
+  <include file="public@head" />
+  <hook name="before_head_end" />
+</head>
+
+<body class="body-white">
+  <include file="public@header" />
+  <div>
+    <div class="page-body com-demo">
+
+      <section class="part part1">
+        <div class="middle">
+          <div class="demo" data-type="all-demo">
+            <div class="demo1"></div>
+            <p>全部案例</p>
+          </div>
+          <div class="demo" data-type="mobile">
+            <div class="demo2"></div>
+            <p>手机端</p>
+          </div>
+          <div class="demo" data-type="pc">
+            <div class="demo3"></div>
+            <p>PC机端</p>
+          </div>
+          <div class="demo" data-type="response">
+            <div class="demo4"></div>
+            <p>响应式</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="part part2 single gone">
+        <div class="demo-titile">
+          <div class="middle">
+            <h1 id="title">大牌驾到</h1>
+            <div class="sj"></div>
+          </div>
+        </div>
+        <div class="demo-content middle">
+          <div class="left left1" id="info">
+
+          </div>
+          <div class="left left2">
+            <p>Client Name: <span id="name"></span></p>
+            <p>What we do: <span id="wedo"></span></p>
+            <p>访问网址:<a id="link" target="_blank"></a></p>
+          </div>
+
+
+          <div class="clear"></div>
+        </div>
+        <div class="demo-img">
+          <!-- <img id="qrcode" src="images/demo/qr8.png"> -->
+          <img style="max-width: 100%; max-height: 100%; display: inline; box-shadow: 0 0 10px #dedede;" id="demoimg">
+        </div>
+      </section>
+
+
+      <section class="all">
+        <div class="mid-button">
+          <!-- <div class="col-btn active" onClick="change('col')"><div></div><div></div><div></div><div></div></div>
+                        <div class="row-btn" onClick="change('row')"><div></div><div></div><div></div></div> -->
+        </div>
+        <div class="demo-area middle">
+
+          <!---  分类：mobile pc response  --->
+
+
+          <div class="all-demo style-col mobile" data-name="途家" data-wedo="Branding / Web Design" data-src="images/demo/d32.jpg">
+            <div class="demo-info">
+              <h1>随心而动 开心之旅</h1>
+              <a class="links">https://www.h5anli.com/h5/2017/pian/project/tujiaheart/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s321.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>以“随心而动 开心之旅”为主题，一语双关“心动”和“开心”</p>
+              <p style="height:30px"></p>
+              <p>采用温馨的粉色作为主视觉，营造温暖的气氛</p>
+              <p>配合写实旅行、人物图片和简洁文案，一屏介绍一个精致小故事，让人思考自己生活</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="奥迪" data-wedo="Branding / Web Design" data-src="images/demo/d48.jpg" data-qrcodesrc="images/demo/qr48.png">
+            <div class="demo-info">
+              <h1>一汽大众：奥迪精英荣耀遴选</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/audimrms/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s481.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>奥迪 投票类 H5</p>
+              <p>展示奥迪幕后的工作人员</p>
+              <p style="height:30px"></p>
+              <p>星光作为背景，商务排版风格，严谨又气势恢宏</p>
+              <p>点击点亮地图版块的交互设计，使人眼前一亮</p>
+              <p>流畅高清的画面给人一种利落干脆之感</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="在行 & 小米"" data-wedo=" Branding / Web Design" data-src="images/demo/d47.jpg" data-qrcodesrc="images/demo/qr47.png">
+            <div class="demo-info">
+              <h1>寻找90后斜杠青年</h1>
+              <a class="links">https://www.h5anli.com/h5/zhmi</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s471.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>在行 & 小米 活动宣传H5</p>
+              <p>以探索解密为核心，整体以探索和公益为内容展现</p>
+              <p style="height:30px"></p>
+              <p>以“寻找90后斜杠青年”为主题（“斜杠青年”是指拥有多重职业和多重身份的人）</p>
+              <p>作为“斜杠青年”代表</p>
+              <p>小米科技联合创始人黎万强入驻国内最大知识技能共享平台“在行”</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="这些年走过的足迹" data-wedo="Branding / Web Design" data-src="images/demo/d46.jpg" data-qrcodesrc="images/demo/qr46.png">
+            <div class="demo-info">
+              <h1>这些年走过的足迹</h1>
+              <a class="links">https://www.h5anli.com/cases/201605/huanqiu.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s461.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>环球漫游H5</p>
+              <p>环球漫游品牌宣传</p>
+              <p style="height:30px"></p>
+              <p>以“这些年走过的足迹”为主题</p>
+              <p>淡蓝背景配彩色国旗，产品Logo取色做成地标，清爽清晰</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="蒙牛" data-wedo="Branding / Web Design" data-src="images/demo/d45.jpg" data-qrcodesrc="images/demo/qr45.png">
+            <div class="demo-info">
+              <h1>纯白闺蜜</h1>
+              <a class="links">https://www.h5anli.com/h5/mengniu</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s451.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>蒙牛 营销类H5</p>
+              <p>首届“中国H5营销大赛”作品</p>
+              <p style="height:30px"></p>
+              <p>以“纯白闺蜜”为主题，采用双屏对比</p>
+              <p>纯手绘原画，讲述两个闺蜜平凡却多彩的生活</p>
+              <p>主要采用左右滑屏、双指分屏切换的方式，静下来，认真去读两个人的生活，其实如你我</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="智联招聘" data-wedo="Branding / Web Design" data-src="images/demo/d44.jpg" data-qrcodesrc="images/demo/qr44.png">
+            <div class="demo-info">
+              <h1>她们的“秘密”</h1>
+              <a class="links">https://www.h5anli.com/h5/2017/pian/project/zhilian/index.html/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s371.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>智联招聘</p>
+              <p>地理定位+漂流瓶+图片合成+助力</p>
+              <p style="height:30px"></p>
+              <p>收集礼物部分，背景是腾讯地图，地图上有随机放置的手绘风格的小礼物</p>
+              <p>包含多种交互形式</p>
+              <p>无论是地图还是图片合成还是漂流瓶，全程都有用户头像的元素，这样也大大提高了用户的参与感</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="软山" data-wedo="Branding / Web Design" data-src="images/demo/d43.jpg" data-qrcodesrc="images/demo/qr43.png">
+            <div class="demo-info">
+              <h1>小五的语音情书</h1>
+              <a class="links">https://www.h5anli.com/h5/2017/pian/jdsound/index.php</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s431.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>图文展示类 H5</p>
+              <p>以小五的一封语音情书为主题展开</p>
+              <p style="height:30px"></p>
+              <p>关注后在公众号上输入520，会发送给您这份语音情书</p>
+              <p>点击进入后会展开，像信一样缓缓展开</p>
+              <p>讲述了你从何时认识小五，与小五一起走了几天，小五会发出语音告诉你定级在什么段位名同时还会发送证书给你</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+
+          <div class="all-demo style-col mobile" data-name="新周刊" data-wedo="Branding / Web Design" data-src="images/demo/d41.jpg" data-qrcodesrc="images/demo/qr41.png">
+            <div class="demo-info">
+              <h1>听声音，猜明星</h1>
+              <a class="links">https://www.h5anli.com/h5/2017/pian/project/newweeklyone/index.html/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s381.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>问答测试类H5案例</p>
+              <p>以“听声音，猜明星”为题，让用户识别五位名人读书的声音</p>
+              <p style="height:30px"></p>
+              <p>设计上，以《新周刊》新版刊面黄色为主视觉，配合白底黑字，形式清晰，主题突出</p>
+              <p>题目是五位明星阅读的声音，选项是名人卡通头像和姓名</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="映客" data-wedo="Branding / Web Design" data-src="images/demo/d40.jpg" data-qrcodesrc="images/demo/qr40.png">
+            <div class="demo-info">
+              <h1>映客2016公益年鉴</h1>
+              <a class="links">https://www.h5anli.com/h5/yingke/yingke/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s401.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>映客 宣传H5</p>
+              <p>图文展现了映客2016公益年鉴活动，并可进行图片合成及保存</p>
+              <p style="height:30px"></p>
+              <p>创建海报，生成自己作为映客公益使者的公益年鉴，可分享给小伙伴传递温暖</p>
+              <p>漫画风格，采用宇宙星空作为背景，有种浩瀚伟大之感，展现映客2016公益年鉴活动的图片由一颗颗小星星幻化而来，神秘优雅</p>
+              <p>可对上传的图片进行拖动放缩旋转的操作，调整到合适的位置</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="京东" data-wedo="Branding / Web Design" data-src="images/demo/d39.jpg" data-qrcodesrc="images/demo/qr39.png">
+            <div class="demo-info">
+              <h1>遇见未来的你</h1>
+              <a class="links">http://www.h5anli.com/h5/2017/pian/project/jd3dprint/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s391.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>抽奖类H5</p>
+              <p>采用手绘的方式。案例主体为3D打印机，主题为遇见未来的你</p>
+              <p style="height:30px"></p>
+              <p>动效上来说，为了增加与用户的交互，采取长按的方式进行打印，打印完成后可以让画面动起来，使画面有了活力</p>
+              <p>H5本身以轻松活泼的基调，展示了3D打印机在各场景中的使用</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="昕薇" data-wedo="Branding / Web Design" data-src="images/demo/d38.jpg" data-qrcodesrc="images/demo/qr38.png">
+            <div class="demo-info">
+              <h1>薛之谦的buy家情报局</h1>
+              <a class="links">https://www.h5anli.com/h5/xinwei/mofashijia/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s411.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>昕薇 活动宣传H5</p>
+              <p>图文展示类 利用明星效应引出薛之谦的buy家情报局</p>
+              <p style="height:30px"></p>
+              <p>小清新风格，采用生机勃勃的绿色作为主色调</p>
+              <p>采用面膜与大自然的景色相融合的视觉设计，从侧面展现了膜法世界的面膜是绿色产品</p>
+              <p>看搞笑好玩的拍摄花絮采用的是拖动或直接点击的方式将自己想看的图片置顶，而后可拖动放缩旋转，欣赏花絮图片。</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="双城记" data-wedo="Branding / Web Design" data-src="images/demo/d37.jpg" data-qrcodesrc="images/demo/qr37.png">
+            <div class="demo-info">
+              <h1>疯狂旅行</h1>
+              <a class="links">https://www.h5anli.com/h5/bluefocus/kunhang/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s421.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>昆明航空公司 宣传H5</p>
+              <p>图文展示类 通过转动疯狂计划制造机摇取疯狂时间，疯狂地点，疯狂事件，产生任务单等你去完成</p>
+              <p style="height:30px"></p>
+              <p>整体设计偏海报形式，每一屏都像海报一样映入眼帘</p>
+              <p>颜色搭配偏冷色调让人感觉十分清爽，文字与点线面的结合让画面十分有设计感</p>
+              <p>首屏增加陀螺仪的交互方式，让案例动效更加丰富。</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="H5营销大赛" data-wedo="Branding / Web Design" data-src="images/demo/d36.jpg" data-qrcodesrc="images/demo/qr36.png">
+            <div class="demo-info">
+              <h1>做H5最难的地方竟然是...</h1>
+              <a class="links">http://ds.vcont.com/h5/2017/ala/project/h5startup/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s361.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>视频类。H5营销大赛启动会宣传</p>
+              <p>首页点击“马里奥”，他会跳到屏幕上方，并像拉帘子一样把页面拉下来，此时第一页逐渐消失</p>
+              <p style="height:30px"></p>
+              <p>手绘 + 矢量设计</p>
+              <p>第二页是视频，视频自动播放，开头是一个姑娘和一个汉子在争论“H5”和“iH5”</p>
+              <p>随后便是介绍H5营销大赛的活动概况。尾页点击“我要占位”上方的指纹跳转活动页。</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="海航" data-wedo="Branding / Web Design" data-src="images/demo/d35.jpg" data-qrcodesrc="images/demo/qr35.png">
+            <div class="demo-info">
+              <h1>神秘密码在哪里？</h1>
+              <a class="links">https://www.h5anli.com/h5/2017/ala/hna/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s351.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>海航 宣传H5</p>
+              <p>以探索解密为核心，整体以探索和公益为内容展现</p>
+              <p style="height:30px"></p>
+              <p>通过四种交互方式，探索到4个数字，分别为“3056”</p>
+              <p>每找到一个数字，会显示一屏公益内容</p>
+              <p>纪念碑谷游戏的设计风格。深色的背景，配合鲜亮的色彩，小小神秘色彩</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="京东" data-wedo="Branding / Web Design" data-src="images/demo/d35.jpg" data-qrcodesrc="images/demo/qr35.png">
+            <div class="demo-info">
+              <h1>时尚生活体验馆</h1>
+              <a class="links">https://www.h5anli.com/h5/bluefocus20/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s201.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>京东 宣传H5</p>
+              <p>通过8个家居场景，展示时尚生活体验馆的种种可能</p>
+              <p style="height:30px"></p>
+              <p>手绘卡通风格，画面细腻，很有高级感</p>
+              <p>滑动对应的屏幕，卡通人物主人公，以第一人称或者第三人称的角度，讲述事故</p>
+              <p>查看物品的细节和购买链接</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="蓝色光标" data-wedo="Branding / Web Design" data-src="images/demo/d35.jpg" data-qrcodesrc="images/demo/qr35.png">
+            <div class="demo-info">
+              <h1>蓝色光标20年，不止于蓝</h1>
+              <a class="links">https://www.h5anli.com/h5/bluefocus20/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s441.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>蓝色光标 宣传H5</p>
+              <p>图片合成类 生成自己蓝标20年图片</p>
+              <p style="height:30px"></p>
+              <p>先以文字描述引入职场回忆，而后采用三张图片合成后的样式模板，展现了蓝标20年的变迁</p>
+              <p>选择入职时间，上传一张入职时照片，和一张现在的照片，再选择已有文案或自己写的文案并合成</p>
+              <p>怀旧风格，整体采用书籍翻页的形式</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="中国人民大学" data-wedo="Branding / Web Design" data-src="images/demo/d34.jpg" data-qrcodesrc="images/demo/qr34.png">
+            <div class="demo-info">
+              <h1>人大春秋图</h1>
+              <a class="links">https://www.h5anli.com/h5/2017/on/RUC80/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s341.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>中国人民大学 宣传类H5</p>
+              <p style="height:30px"></p>
+              <p>以中国人民大学80周年校庆为主题，通过一幅很长很长的画卷，展示了人大建校史</p>
+              <p>卷轴的形式。水墨风格，细腻的笔触，以画卷为呈现，通过传统和历史厚重的韵味，展示了人大历史</p>
+              <p>横向水平向左浏览。因为画卷从右向左，以时间为维度，依次展现人大重要的历史时刻和建筑物</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="途家" data-wedo="Branding / Web Design" data-src="images/demo/d33.jpg" data-qrcodesrc="images/demo/qr33.png">
+            <div class="demo-info">
+              <h1>老板在群里@了你</h1>
+              <a class="links">https://www.h5anli.com/h5/2017/ala/tujiachat/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s331.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>途家 宣传H5</p>
+              <p>以“老板在群聊中@了你”为主题，用模拟微信群聊讨论团建去处的形式</p>
+              <p style="height:30px"></p>
+              <p>将民宿品牌“途家”轻松带入，让用户在轻松欢快的氛围中，了解民宿，了解途家</p>
+              <p>采用手绘漫画风格，每一个人物设计都极力贴近真实人物模型，简洁风趣，耐看</p>
+              <p>模拟微信群聊天，用户会在闪动的语音条处，自然点击交互</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="送副春联过大年" data-wedo="Branding / Web Design" data-src="images/demo/d8.jpg" data-qrcodesrc="images/demo/qr8.png">
+            <div class="demo-info">
+              <h1>送副春联过大年</h1>
+              <a class="links">https://www.h5anli.com/wxactivities/realruili/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s81.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>保洁 宣传H5</p>
+              <p>通过三个关键词（征服、比拼、加冕）引入活动主题。</p>
+              <p style="height:30px"></p>
+              <p>黑色主色调，配以白色和红色。</p>
+              <p>通过人物、香水、皇冠3D视觉形象打散与汇聚，表达前三屏的关键词；</p>
+              <p>前三屏采用点击方式进行切换交互，后面采用滑屏切换。</p>
+
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="果壳×巴斯夫" data-wedo="Branding / Web Design" data-src="images/demo/d9.jpg" data-qrcodesrc="images/demo/qr9.png">
+            <div class="demo-info">
+              <h1>点击进入未来实验室，一起乐见城市的未来</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/guoke/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s91.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>果壳×巴斯夫</p>
+              <p>以未来城市为主题，结合现有的科学实践为我们展示了一副未来城市的美丽图景</p>
+              <p style="height:30px"></p>
+              <p>以蓝白为主色调，用沙盘模型的方式来刻画未来城市的样貌</p>
+              <p>悬浮城市配合沙盘模型的展现方式科技感十足</p>
+              <p>整则案例一体性很强，页面间的切换过渡自然，画面唯美，以沙盘模型的方式来表达对未来城市的期许</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="河狸家" data-wedo="Branding / Web Design" data-src="images/demo/d10.jpg" data-qrcodesrc="images/demo/qr10.png">
+            <div class="demo-info">
+              <h1>颜值鉴定机构</h1>
+              <a class="links">https://www.h5anli.com/cases/201811/helijiamy.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s101.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>河狸家颜值测试</p>
+              <p>以颜值鉴定为出发点</p>
+              <p style="height:30px"></p>
+              <p>用户上传正面照片，选择男女性别，输入昵称，而后点击[开始测试]按钮</p>
+              <p>开始对颜值进行分析，会分析眉毛、眼睛的宽度，鼻子占脸宽度比例和嘴占脸部宽度比例</p>
+              <p>最后给出你是当前第几份对颜值鉴定的报告，还有气质类型、颜值DNA类型、颜值宣言</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="华为&果壳" data-wedo="Branding / Web Design" data-src="images/demo/d11.jpg" data-qrcodesrc="images/demo/qr11.png">
+            <div class="demo-info">
+              <h1>不经意的世界</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/guoke2018/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s111.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>华为&果壳</p>
+              <p> 华为在欧洲创新活动日之前做的一个线上预热H5</p>
+              <p style="height:30px"></p>
+              <p>以“不经意的世界”为题，讲述了人类在基础领域不断探索的过程中，一些不经意的成果</p>
+              <p>一些不经意的成果，给人类带来了巨大影响</p>
+              <p>最后部分华为成果的露出，显示了华为在基础研究领域的坚持、创新，以及取得的成就</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="京东超市 + 中粮" data-wedo="Branding / Web Design" data-src="images/demo/d12.jpg" data-qrcodesrc="images/demo/qr12.png">
+            <div class="demo-info">
+              <h1>寻TA陪你过中秋</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/jdzq/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s121.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>京东超市 + 中粮</p>
+              <p>用一则简短的漫画描述一个情境，讲述一个小故事</p>
+              <p style="height:30px"></p>
+              <p>采用四格漫画的形式，用简笔画勾勒出了在大都市打拼的青年男女的生活现状</p>
+              <p>漫画场景之间衔接自然，内容过渡流畅不拖沓</p>
+              <p>既包含视觉上的动画效果，又包含内容衔接所用的口播文案</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="必达净" data-wedo="Branding / Web Design" data-src="images/demo/d13.jpg" data-qrcodesrc="images/demo/qr13.png">
+            <div class="demo-info">
+              <h1>必达净生来讲究</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/bidajing/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s131.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>必达净 产品宣传</p>
+              <p>整个案例画面清新脱俗，清晨的暖阳，新生的枝叶，到处都散发着一种青春洋溢的气息，</p>
+              <p style="height:30px"></p>
+              <p>整则案例从风格统一，切换动画流畅。在有限的页面中展现了足够多的内容</p>
+              <p>将用户和产品紧密贴合在一起。很好的实现了产品的宣传作用</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="奥迪" data-wedo="Branding / Web Design" data-src="images/demo/d14.jpg" data-qrcodesrc="images/demo/qr14.png">
+            <div class="demo-info">
+              <h1>奥迪英杰汇贺中秋</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/audizq/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s141.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>以中秋为主题</p>
+              <p>中秋的月亮，配6个人物（奥迪英杰汇的成员）和奥迪汽车的剪影</p>
+              <p style="height:30px"></p>
+              <p>点击“去赏月”，进入2.5D的城市，不同的城市景物配合不同的奥迪英杰汇成员</p>
+              <p>每次停顿到对应的城市景物，还可以点击看对应英杰汇成员对大家的祝福</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="京东超市" data-wedo="Branding / Web Design" data-src="images/demo/d15.jpg" data-qrcodesrc="images/demo/qr15.png">
+            <div class="demo-info">
+              <h1>请让我照顾你</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/jdcs/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s151.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>从一名职场女性的视角，讲述一个女性拼搏的温情故事</p>
+              <p>手绘漫画风格，用动漫的形式讲述女主从早晨、路上、工作及晚上的忙碌状态</p>
+              <p style="height:30px"></p>
+              <p>页面简单，采用紫色为主色调；</p>
+              <p>点击进入下一页。</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+
+          <div class="all-demo style-col mobile" data-name="苏宁易购" data-wedo="Branding / Web Design" data-src="images/demo/d16.jpg" data-qrcodesrc="images/demo/qr16.png">
+            <div class="demo-info">
+              <h1>燃客特工队</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/suning818/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s161.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>活动宣传类H5</p>
+              <p>一则功能性和交互性都很强的案例</p>
+              <p style="height:30px"></p>
+              <p>采用偏冷的色调，辅以充满科技感的字体，加上渐变的色彩呈现，给用户以浓浓的极客风</p>
+              <p>交互上，用十分丰富点击音效，作为交互反馈的同时也使用户能更好的沉浸其中</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="软山" data-wedo="Branding / Web Design" data-src="images/demo/d17.jpg" data-qrcodesrc="images/demo/qr17.png">
+            <div class="demo-info">
+              <h1>我想和你领个证</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/7x/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s171.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>以结婚证为主题，生生成各种角度的仿真结婚证，以期在七夕节时晒出，跟朋友开个玩笑</p>
+              <p>愚人节的宣传H5案例。</p>
+              <p style="height:30px"></p>
+              <p>通过上传图像和姓名，选择模板，生成结婚证图片</p>
+              <p>录入信息后，上传照片后，点击“生成结婚证”即可生成</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="优酷体育" data-wedo="Branding / Web Design" data-src="images/demo/d18.jpg" data-qrcodesrc="images/demo/qr18.png">
+            <div class="demo-info">
+              <h1>最强点球大战</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/youku/fbgame/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s181.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>在2018俄罗斯世界杯1/4决赛期间推出的“最强点球大战”H5小游戏</p>
+              <p>主要采用绿茵足球场背景，配合夜场的灯光照射</p>
+              <p style="height:30px"></p>
+              <p>长按可以保存战绩单，战绩单有回流二维码</p>
+              <p>用户分享战绩后，可以有效回流</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="优酷体育" data-wedo="Branding / Web Design" data-src="images/demo/d19.jpg" data-qrcodesrc="images/demo/qr19.png">
+            <div class="demo-info">
+              <h1>加入我的梦想绿茵军团</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/youku/rl/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s191.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>世界杯主题的人脸融合H5</p>
+              <p>还可以选择性别，男性和女性的队服展示不同。最后合成有用户上传人脸的队服海报</p>
+              <p style="height:30px"></p>
+              <p>扁平风格，主色调为绿色和蓝色</p>
+              <p>合成出的海报添加了美颜，效果很好</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="小猪短租" data-wedo="Branding / Web Design" data-src="images/demo/d21.jpg" data-qrcodesrc="images/demo/qr21.png">
+            <div class="demo-info">
+              <h1>测测你五年后的生活</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/x/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s211.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>以“测测你五年后的生活”为主题</p>
+              <p>结合穿越主题+测试形式+横向长图+场景布置+海报生成，进行小猪短租品牌线上传播和活动引流</p>
+              <p style="height:30px"></p>
+              <p>主要以深蓝为主背，小猪短租的logo粉为亮色，配合实景靓丽房源，视觉清晰，交互明显</p>
+              <p>最后生成的文案和恶搞的海报，很能激发分享的欲望</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="中国邮政储蓄银行" data-wedo="Branding / Web Design" data-src="images/demo/d22.jpg" data-qrcodesrc="images/demo/qr22.png">
+            <div class="demo-info">
+              <h1>百城试驾抢好礼</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/yzcxcars</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s221.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>中国邮政储蓄银行联合三家车企，开展线上百城试驾预约</p>
+              <p>视觉冲击力视频特效+豪礼+驾驶小游戏+转盘抽奖+车型展示+试驾预约+购车有礼</p>
+              <p style="height:30px"></p>
+              <p>一个结合丰满的互动抽奖+丰富功能介绍的H5</p>
+              <p>用户在沉浸其中体验交互的过程中，了解了中国邮政储蓄银行多种产品</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="东方画卷" data-wedo="Branding / Web Design" data-src="images/demo/d23.jpg" data-qrcodesrc="images/demo/qr23.png">
+            <div class="demo-info">
+              <h1>北大筑梦图</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/beida/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s231.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>用一幅贯穿历史、空间的艺术长卷，献礼北京大学120周年校庆</p>
+              <p>致敬北京大学的伟大贡献，实现新时代中华民族伟大复兴的中国梦。</p>
+              <p style="height:30px"></p>
+              <p>创作团队特联合北大部分师生和校友</p>
+              <p>及央美等九所艺术院校的部分师生共同创作了这幅《北大筑梦图》长卷</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="软山" data-wedo="Branding / Web Design" data-src="images/demo/d24.jpg" data-qrcodesrc="images/demo/qr24.png">
+            <div class="demo-info">
+              <h1>别不相信，你是一颗星星</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/ala/project/jiandou/life/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s241.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>以“生命诚可贵 珍惜每一天”为主题</p>
+              <p>随着页面向左缓缓的滑动，展现一个人短暂而幸福的一生</p>
+              <p style="height:30px"></p>
+              <p>手绘漫画风格。页面由黑白灰构成，没有绚丽的色彩</p>
+              <p>背景音乐采用舒缓的钢琴曲，缓缓的打动人心，带人们走进回忆</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="黑猫投诉" data-wedo="Branding / Web Design" data-src="images/demo/d25.jpg" data-qrcodesrc="images/demo/qr25.png">
+            <div class="demo-info">
+              <h1>哈哈哈，千万别惹酒店前台...</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/ala/project/blackcat</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s251.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>这是为新浪旗下消费者服务平台——黑猫投诉所打造的一款H5</p>
+              <p>以第一人称的视角，展现了黑导游中途乱收费</p>
+              <p style="height:30px"></p>
+              <p>采用真实的视频场景，真人对话、微信录屏等，真实感很强</p>
+              <p>主人公遇到“宰人”事件后的无奈、气愤的心情很容易被用户感受到，戳到用户的痛点，引发共鸣</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="万科" data-wedo="Branding / Web Design" data-src="images/demo/d26.jpg" data-qrcodesrc="images/demo/qr26.png">
+            <div class="demo-info">
+              <h1>绿色承诺</h1>
+              <a class="links">http://www.yuangucg.com/2017/vanke/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s261.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>万科被动房产品推介。以“绿色承诺”为主题</p>
+              <p>用长图形式展现内容。四部分序、承诺片、技术篇、行动篇</p>
+              <p style="height:30px"></p>
+              <p>分别介绍万科在推出被动房的大环境、国家向世界的承诺、被动房具体技术方案以及万科做出的实际行动</p>
+              <p>整体视觉对比鲜明，房体结构用立体动画展示，形象生动</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="奥迪"" data-wedo=" Branding / Web Design" data-src="images/demo/d27.jpg" data-qrcodesrc="images/demo/qr27.png">
+            <div class="demo-info">
+              <h1>奥迪英杰汇</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/ala/project/audi/vorsprung1/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s271.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>长图类+视频类，这是奥迪为用户准备的新年特辑H5，</p>
+              <p>H5以一镜到底滑屏形式将各个大使所代表的品牌形象串联起来</p>
+              <p style="height:30px"></p>
+              <p>让用户感受到品牌的内涵与力量</p>
+              <p>背景音与特效音相配合，主次分明</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="苏宁易购" data-wedo="Branding / Web Design" data-src="images/demo/d28.jpg" data-qrcodesrc="images/demo/qr28.png">
+            <div class="demo-info">
+              <h1>吃鸡全球排行榜</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/ala/project/suning/kar98k/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s281.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>主题文字配色应该是参考了PUBG（绝地求生大逃杀） 的深黄，并加入了风格不一样的纹理以及渐变</p>
+              <p>操作非常简单、好玩的一款小游戏</p>
+              <p style="height:30px"></p>
+              <p>游戏失败后的提示，按钮的点击等等，奖品的设置也很给力，激励用户获得高分</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="软山" data-wedo="Branding / Web Design" data-src="images/demo/d29.jpg" data-qrcodesrc="images/demo/qr29.png">
+            <div class="demo-info">
+              <h1>拜年了</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2018/newyear2018/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s291.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>以拜年为主题，通过“变装，变脸，变声”，展现一个不一样的拜年方式</p>
+              <p>有男女两大类，拜年人物选择，每一类还分6个年代</p>
+              <p style="height:30px"></p>
+              <p>分别为：汉朝、唐朝、宋朝、明朝、民国、现代</p>
+              <p>时代感的浅棕色和节日红，设计师还处理了纸质的纹理，让画面更有时代感</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="爱卡汽车" data-wedo="Branding / Web Design" data-src="images/demo/d30.jpg" data-qrcodesrc="images/demo/qr30.png">
+            <div class="demo-info">
+              <h1>2017XMEETING车迷大会</h1>
+              <a class="links">http://a.xcar.com.cn/huodong/201709/aikaxmeeting/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s301.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>重力感应3D全景类</p>
+              <p>炫酷风格,彩色进度条从左到右依次充满整个进度条区域</p>
+              <p style="height:30px"></p>
+              <p>3D场景主要以陆地、浮岛和各类车辆等元素组成，色彩主要以绿色、粉蓝色为主，清新自然，充满生机</p>
+              <p>配上动感激情的超跑、电音等混合背景音，有种振奋人心的神秘之感</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+
+          <div class="all-demo style-col mobile" data-name="苏宁易购" data-wedo="Branding / Web Design" data-src="images/demo/d31.jpg" data-qrcodesrc="images/demo/qr31.png">
+            <div class="demo-info">
+              <h1>王者农药•台词大考验</h1>
+              <a class="links">https://www.h5anli.com/h5/2017/ala/suning/srouter/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s311.jpg">
+            <div class="hidden-info">
+              <p>背景介绍：</p>
+              <p>答题类小游戏。苏宁易购双十一活动宣传</p>
+              <p>萌到骨子里的卡通插画，整体背景色调偏暖黄。画面中的人物角色，在保持风格统一的同时，又各具特色</p>
+              <p style="height:30px"></p>
+              <p>除了案例的画风之外，还有它的细节和代入感</p>
+              <p>答对或者答错每道题，都会有不同的音效出现，并且音效也跟游戏中的音效很像，程度会随成绩而递增</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="软山" data-wedo="Branding / Web Design" data-src="images/demo/d1.jpg">
+            <div class="demo-info">
+              <h1>神秘小五的一天</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2019/a-day-of-x5/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s11.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>H5案例分享品牌宣传的H5</p>
+              <p>讲述H5案例分享团队中小五的成长</p>
+              <p>核心主题“是否记得青春年少时的自己”，还有那时候的初心</p>
+              <p style="height:30px"></p>
+              <p>一镜到底的形式，通过几个小故事，用户横向滑动屏幕的过程中，不断的讲述故事</p>
+              <p>展示上学时自己，回忆自己的初心，发现生活的原动力</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="招银网络科技" data-wedo="Branding / Web Design" data-src="images/demo/d2.jpg">
+            <div class="demo-info">
+              <h1>你可能不知道的招银网络科技</h1>
+              <a class="links">https://cmbntjob-mobile.cmbchina.com/wx/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s21.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>招银网络科技为2019年校招做的长图类型H5作品</p>
+              <p>展示了招银网络科技在支持招商银行业务各方面的数据，以及技术实力</p>
+              <p>最后进行公司简介，让同学们可以方便的投递简历</p>
+              <p style="height:30px"></p>
+              <p>以蓝黑为主题色，突出了招银网络科技的科技主题，带入感很强</p>
+              <p>用多组局部动画，让用户可以感性了解技术，即使不懂业务，也不明觉厉</p>
+              <p>整体观感流畅，局部动画使各种业务场景表现丰满，吸引眼球</p>
+              <p>快速滑动，有缓动效果，滑动体验较好</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="网易考拉" data-wedo="Branding / Web Design" data-src="images/demo/d3.jpg">
+            <div class="demo-info">
+              <h1>凡人，想修仙吗？</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2019/wykl618/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s31.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>由网易考拉和简豆为了推广618全球潮流狂欢日所制作的测试类H5</p>
+              <p>此H5手绘卡通风格为主，大致分为3部分</p>
+              <p style="height:30px"></p>
+              <p>饱和度较低的米黄色和棕红色的色调让人看着眼睛很舒服，题目都想的很有趣</p>
+              <p>右上角可关闭音乐，静音欣赏。在片头动画开始时，右上角也有跳过的按钮，很贴心</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="软山" data-wedo="Branding / Web Design" data-src="images/demo/d4.jpg">
+            <div class="demo-info">
+              <h1>梦中的婚礼</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2019/dreamwedding/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s41.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>在37女生节38女神节来临之际，上线的一支DIY“梦幻”婚礼场景H5作品</p>
+              <p>为男生女生设计了一个“婚礼主题”的布置场景H5</p>
+              <p style="height:30px"></p>
+              <p>让少男少女展开想象，构建自己梦中的婚礼场景</p>
+              <p>整体画面暖色调，甜甜的，梦幻的感觉，纯手绘，完全手工打造</p>
+              <p>选择想要的场景、人物、配饰和宠物，拖拖拽拽，搭建完毕，生成专属“梦中的婚礼”海报</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="苏宁易购" data-wedo="Branding / Web Design / Web APP" data-src="images/demo/d5.jpg">
+            <div class="demo-info">
+              <h1>你的2019人设</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2019/suning01/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s51.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>开学开工之际，苏宁的超级品牌日推出了华硕品牌机购机优惠活动</p>
+              <p>在测试自己的人设之后，可以直接登录主页，浏览商品，了解优惠活动的具体内容</p>
+              <p style="height:30px"></p>
+              <p>功能描述：</p>
+              <p>输入用户名，回答三个情景测试题，选择自己的星座后，即可生成人设结果</p>
+              <p>游戏加载顺畅，操作简单，题目包括加班，购物，撕葱，杰伦等内容</p>
+              <p>贴近年轻人的日常生活和关注点</p>
+            </div>
+          </div><!-- end of all-demo -->
+
+
+          <div class="all-demo style-col mobile" data-name="苏宁易购 + 惠普" data-wedo="Branding / Web Design" data-src="images/demo/d6.jpg">
+            <div class="demo-info">
+              <h1>苏宁惠普超级品牌日</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2019/suningcards/index.html</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s61.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>扫惠普logo，集卡牌“惠”“普”“以”“团”“之”“名”，得礼品</p>
+              <p>入图像识别界面，点击屏幕中间的加号，可以直接拍一张带惠普logo的照片</p>
+              <p>红色主色调，整体挺喜庆</p>
+              <p style="height:30px"></p>
+              <p>采用图像识别技术，分析用户上传照片中logo的品牌</p>
+              <p>扫“福”字集卡牌，玩的次数倒是很多；扫logo得到不同的卡牌</p>
+
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col mobile" data-name="奥迪" data-wedo="Branding / Web Design" data-src="images/demo/d7.jpg">
+            <div class="demo-info">
+              <h1>奥迪英杰汇携手奥迪挚友贺新春</h1>
+              <a class="links">https://www.jiandoukeji.com/h5/2019/audi01/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s71.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>创意定位，新年年俗介绍+猜灯谜</p>
+              <p>从云端展开，不断向上滑动屏幕，进入小镇，沿着街道走过</p>
+              <p style="height:30px"></p>
+              <p>剪纸的人物，饱和度高的配色，红色调偏多，很喜庆</p>
+              <p>采用3D立体场景的设计</p>
+              <p>在滑动屏幕的过程中，逐步看到两侧细致的景物。背景音鞭炮和舞狮子很渲染气氛</p>
+
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col pc" data-name="腾讯视频" data-wedo="Branding / Web Design" data-src="images/demo/d49.jpg">
+            <div class="demo-info">
+              <h1>大牌驾到</h1>
+              <a class="links">http://v.qq.com/dpjd/index.htm</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s491.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>《大牌驾到》是腾讯视频，腾讯娱乐联合打造的高端名人谈话节目。</p>
+              <p>主持人为华少。依托腾讯强大平台资源，邀请影视，音乐，文化，体育，商界一线大牌，</p>
+              <p>从人的角度解读时下最热点的一线新闻人物。不一样的顶尖名人Talk Show（脱口秀）。</p>
+              <p style="height:30px"></p>
+              <p>这一版是大牌的第二版。</p>
+              <p>第一版也是简豆设计制作的。</p>
+              <p>在第二版中，合作方要求保持主色调，在设计风格上采用的扁平设计。</p>
+
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col pc" data-name="腾讯时尚" data-wedo="Branding / Web Design" data-src="images/demo/d50.jpg">
+            <div class="demo-info">
+              <h1>YOHO</h1>
+              <a class="links">http://fashion.qq.com/zt2013/yohood/index.htm</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s501.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>YOHO是“YOUNG”与“HOME”的结合。</p>
+              <p>从这个概念可以得知，YOHO是一个定为年轻的生活社区。</p>
+              <p>YOHO的诞生，让人感受到一种向上的生活态度。</p>
+              <p style="height:30px"></p>
+              <p>此版设计是腾讯时尚与YOHO有货的一次对品牌宣传的合作。</p>
+              <p>设计师在设计该页面时，收集了很多YOHO的信息和设计理念，</p>
+              <p>将合作版本页面，很好的展示的YOHO的风格和文化，</p>
+              <p>让YOHO的品牌风格，对年轻潮人的吸引，</p>
+              <p>更加进一步。</p>
+
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col pc" data-name="腾讯时尚" data-wedo="Branding / Web Design" data-src="images/demo/d51.jpg">
+            <div class="demo-info">
+              <h1>做范儿</h1>
+              <a class="links">http://luxury.qq.com/zt2013/instyle/004.htm</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s511.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>《做范儿》从题目就可以了解到，</p>
+              <p>该内容请的都是明星中的范儿。</p>
+              <p>请过范儿们，周迅，孙俪，赵薇等等...</p>
+              <p style="height:30px"></p>
+              <p>该设计师采用不同一般网页的杂事风格，</p>
+              <p>力求更突出的展示出明星的本真的东西。</p>
+              <p>将合作版本页面，很好的展示的YOHO的风格和文化，</p>
+              <p>整体高端大气上档次。</p>
+
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col pc" data-name="腾讯健康" data-wedo="Branding / Web Design" data-src="images/demo/d52.jpg">
+            <div class="demo-info">
+              <h1>白话医学</h1>
+              <a class="links">http://health.qq.com/zt2013/baihauyixue/002.htm</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s521.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>《白话医学》将神秘的医学，解读出大众容易理解的文字。</p>
+              <p>请专业术语简单化，亲民化。</p>
+              <p style="height:30px"></p>
+              <p>当合作方表明态度，希望将一个生动有吸引力的医学展示时，</p>
+              <p>我们采用了比较轻快的颜色，来表现专业的话题。</p>
+              <p>让用户读者不觉得距离感。</p>
+              <p>随后采用杂志的风格，不规则的图案设计。</p>
+              <p>力求将繁化为简。</p>
+
+            </div>
+          </div><!-- end of all-demo -->
+
+          <div class="all-demo style-col response" data-name="软山" data-wedo="Branding / Web Design" data-src="images/demo/d53.jpg">
+            <div class="demo-info">
+              <h1>H5案例分享</h1>
+              <a class="links">http://www.h5anli.com/</a>
+              <div class="arrow"></div>
+            </div>
+            <div class="bg"></div>
+            <img class="col-img" src="images/demo/s531.jpg">
+            <div class="hidden-info">
+              <p>设计背景介绍：</p>
+              <p>H5案例分享，</p>
+              <p>H5案例收集地，无论你是策划设计还是技术都能获益。</p>
+              <p style="height:30px"></p>
+              <p>现有4个主要板块，案例收集区，网站推荐区和灵感激发区；</p>
+              <p>同时运营微信公众号“H5案例分享”。</p>
+
+            </div>
+          </div><!-- end of all-demo -->
+        </div><!-- end of demo-area -->
+      </section>
+
+    </div><!-- end of page-body info -->
+
+    <include file="public@footer" />
+  </div>
+
+  <include file="public@scripts" />
+  <hook name="before_body_end" />
+</body>
+
+</html>
