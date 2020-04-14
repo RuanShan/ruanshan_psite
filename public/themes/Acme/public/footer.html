@@ -1,0 +1,91 @@
+<!--footer start-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <widget name="contact">
+                <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                    <h1>{$widget.title}</h1>
+                    <notempty name="theme_vars.gl_address">
+                        <p><i class="fa fa-home pr-10"></i>地址：{$theme_vars.gl_address}</p>
+                    </notempty>
+                    <notempty name="theme_vars.gl_mobile">
+                        <p>
+                            <i class="fa fa-mobile pr-10"></i>手机：
+                            <foreach name="$theme_vars.gl_mobile" item="vo">{$vo.mobile}&emsp;</foreach>
+                        </p>
+                    </notempty>
+                    <notempty name="theme_vars.gl_tel">
+                        <p>
+                            <i class="fa fa-phone pr-10"></i>电话：
+                            <foreach name="$theme_vars.gl_tel" item="vo">{$vo.tel}&emsp;</foreach>
+                        </p>
+                    </notempty>
+                    <notempty name="theme_vars.gl_email">
+                        <p><i class="fa fa-envelope pr-10"></i>邮箱：{$theme_vars.gl_email}</p>
+                    </notempty>
+                </div>
+            </widget>
+            <widget name="tutor">
+                <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
+                    <h1>{$widget.title}</h1>
+                    <div id="owl-slide">
+                        <php>$where=['recommended'=>'1'];</php>
+                        <portal:articles where="$where" limit="$widget.vars.count" order="post.published_time DESC" categoryIds="$widget.vars.category">
+                            <div class="tweet-box">
+                                <i class="fa fa-newspaper-o"></i>
+                                <em>{$vo.post_title}
+                                    <a href="{:url('portal/Article/index',['id'=>$vo.id,'cid'=>$vo.category_id])}"> 查阅 </a>
+                                </em>
+                            </div>
+                        </portal:articles>
+                    </div>
+                </div>
+            </widget>
+            <widget name="bottom_nav">
+                <div class="col-lg-3 col-sm-3">
+                    <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+                        <h1>{$widget.vars.nav_name}</h1>
+                        <navigation nav-id="$widget.vars.nav_cat" root="ul" class="page-footer-list">
+                            <navigationMenu root="li">
+                                <i class="fa fa-angle-right"></i>
+                                <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">{$menu.name|default=''}</a>
+                            </navigationMenu>
+                        </navigation>
+                    </div>
+                </div>
+            </widget>
+            <widget name="text_widget">
+                <div class="col-lg-3 col-sm-3">
+                    <div class="text-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".7s">
+                        <h1>{$widget.vars.title}</h1>
+                        <p>{$widget.vars.content}</p>
+                        <notempty name="widget.vars.image">
+                            <img src="{$widget.vars.image|cmf_get_image_url}" class="img-responsive">
+                        </notempty>
+                    </div>
+                </div>
+            </widget>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+<!--small footer start -->
+<footer class="footer-small">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <p>
+                        {$theme_vars.copyright|default=''} &emsp;
+                        <notempty name="$site_info.site_icp">
+                            <a href="http://www.miitbeian.gov.cn/" target="_blank">{$site_info.site_icp}</a>
+                            <else/>
+                            请在后台设置"网站信息"设置"备案信息"
+                        </notempty>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--small footer end-->

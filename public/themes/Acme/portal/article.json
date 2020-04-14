@@ -1,0 +1,6 @@
+{
+    "name": "文章页",
+    "action": "portal/Article/index",
+    "description": "文章页面",
+    "order": 45.0
+}

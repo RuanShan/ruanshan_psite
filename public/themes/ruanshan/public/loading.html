@@ -1,0 +1,43 @@
+<div class="loading">
+
+<div class="number loading4" id="number"></div>
+<div class="la-anim-6">
+    <svg width="150" height="150" viewBox="0 0 150 150">
+      <path id="la-anim-6-border" transform="translate(75, 75)" d="M 0 0 v -75 A 75 75 1 0 1 0 -75 z"></path>
+      <path id="la-anim-6-loader" transform="translate(75, 75) scale(0.9)" d="M 0 0 v -75 A 75 75 1 0 1 0 -75 z"></path>
+    </svg>
+</div>
+<script>
+   var number=document.getElementById('number');
+    var loader = document.getElementById('la-anim-6-loader')
+        , border = document.getElementById('la-anim-6-border')
+        , α = 0
+        , π = Math.PI
+        , t = 45//调整加载时间
+
+        , tdraw;
+
+    function PieDraw() {
+        α++;
+		var b =Math.floor((α/360)*100);
+		number.innerHTML=b+"%";
+        α %= 360;
+        var r = ( α * π / 180 )
+        , x = Math.sin( r ) * 75
+        , y = Math.cos( r ) * - 75
+        , mid = ( α > 180 ) ? 1 : 0
+        , anim = 'M 0 0 v -75 A 75 75 1 '
+               + mid + ' 1 '
+               +  x  + ' '
+               +  y  + ' z';
+
+        loader.setAttribute( 'd', anim );
+        border.setAttribute( 'd', anim );
+        if( (α > 0)&&(α <359) )
+        tdraw = setTimeout(PieDraw, t); // Redraw
+    }
+
+    PieDraw();
+
+</script>
+</div>

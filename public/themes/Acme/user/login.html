@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <meta name="author" content="Crazy">
+    <link rel="shortcut icon" href="__TMPL__/public/assets/images/favicon.png">
+    <title>用户登录</title>
+    <include file="public@head"/>
+</head>
+<body>
+<include file="public@header"/>
+
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-4">
+                <h1>用户登录</h1>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <ol class="breadcrumb pull-right">
+                    <li><a href="__ROOT__/">首页</a></li>
+                    <li class="active">用户登录</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumbs end-->
+
+<!--container start-->
+<div class="login-bg">
+    <div class="container">
+        <div class="form-wrapper">
+            <form class="form-signin wow fadeInUp js-ajax-form" action="{:url('user/login/doLogin')}" method="post">
+                <h2 class="form-signin-heading">现在登录</h2>
+                <div class="login-wrap">
+                    <input type="text" name="username" class="form-control" placeholder="手机号/邮箱/用户名" autofocus>
+                    <input type="password" name="password" class="form-control" placeholder="密码">
+                    <input type="text" name="captcha" placeholder="验证码" class="form-control captcha" style="width: 100px;float: left;margin-right: 30px">
+                    <captcha height="38" width="160" font-size="20"/>
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> 记住我
+                        <span class="pull-right"><a data-toggle="modal" href="{:cmf_url('user/Login/findPassword')}"> 忘记密码</a></span>
+                    </label>
+                    <input type="hidden" name="redirect" value="">
+                    <button class="btn btn-lg btn-login btn-block js-ajax-submit" type="submit">确定</button>
+                    <p>第三方登录</p>
+                    <div class="login-social-link">
+                        <a href="index.html" class="facebook">
+                            <i class="fa fa-weixin"></i> 微信
+                        </a>
+                        <a href="index.html" class="twitter">
+                            <i class="fa fa-weibo"></i> 微博
+                        </a>
+                    </div>
+                    <div class="registration">
+                        还没有账号？
+                        <a href="{:cmf_url('user/Register/index')}"> 现在注册 </a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--container end-->
+<include file="public@scripts"/>
+<script src="__STATIC__/js/frontend.js"></script>
+</body>
+</html>

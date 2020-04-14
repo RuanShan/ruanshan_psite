@@ -1,0 +1,84 @@
+<extend name="public@base"/>
+<block name="head">
+    {__block__}
+    <style>
+        .ranking {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .blog-post img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</block>
+<block name="body">
+    <include file="public@breadcrumb"/>
+    <!--container start-->
+    <div class="container">
+        <div class="row">
+            <!--文章列表-->
+            <div class="col-lg-9 ">
+                <portal:articles order="post.create_time DESC" page="theme_vars.page_count" relation="categories" categoryIds="$category.id">
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-2 text-right">
+                                <div class="date-wrap">
+                                    <span class="date">{$vo.published_time|cmf_get_date='j'}</span>
+                                    <span class="month">{$vo.published_time|cmf_get_date='n月 Y'}</span>
+                                </div>
+                                <notempty name="$vo.post_source">
+                                    <div class="author"> 来源：<a>{$vo.post_source}</a></div>
+                                </notempty>
+                                <notempty name="$vo.post_keywords">
+                                    <php>$post_keywords=explode(',',$vo['post_keywords']);</php>
+                                    <ul class="list-unstyled">
+                                        <foreach name="post_keywords" item="v">
+                                            <li><em>{$v}</em></a></li>
+                                        </foreach>
+                                    </ul>
+                                </notempty>
+                                <div class="st-view">
+                                    <ul class="list-unstyled">
+                                        <li><a href="javascript:;">{$vo.post_hits} 查看</a></li>
+                                        <li><a href="javascript:;">{$vo.post_like} 收藏</a></li>
+                                        <li><a href="javascript:;">{$vo.comment_count} 回复</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-sm-10">
+                                <notempty name="$vo.more.thumbnail">
+                                    <a href="{:cmf_url('portal/Article/index',['id'=>$vo['id'],'cid'=>$category['id']])}">
+                                        <img src="{$vo.more.thumbnail|cmf_get_image_url}"/>
+                                    </a>
+                                </notempty>
+                                <h1>
+                                    <a href="{:cmf_url('portal/Article/index',['id'=>$vo['id'],'cid'=>$category['id']])}">
+                                        {$vo.post_title}
+                                    </a>
+                                </h1>
+                                <p>{$vo.post_excerpt}</p>
+                                <a href="{:cmf_url('portal/Article/index',['id'=>$vo['id'],'cid'=>$category['id']])}" class="btn btn-primary">
+                                    了解详情
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </portal:articles>
+                <div class="text-center">
+                    <ul class="pagination">
+                        <page/>
+                    </ul>
+                </div>
+            </div>
+            <!--右侧栏目-->
+            <div class="col-lg-3 mar-b-30">
+                <include file="public@right_side"/>
+            </div>
+            <!--blog end-->
+        </div>
+    </div>
+    <!--container end-->
+</block>

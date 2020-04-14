@@ -1,0 +1,52 @@
+<div class="blog-side-item">
+    <div class="search-row">
+        <input type="text" class="form-control" placeholder="搜索">
+    </div>
+    <widget name="hottest_articles">
+        <div class="category ranking">
+            <h3> {$widget.title} </h3>
+            <empty name="$widget.vars.hottest_articles_category_id">
+                没有设置文章分类，请在后台设置。
+                <else/>
+                <ul class="list-unstyled">
+                    <portal:articles limit="5" order="post.post_hits DESC" categoryIds="$widget.vars.hottest_articles_category_id">
+                        <li>
+                            <a href="{:cmf_url('portal/Article/index', ['id'=>$vo.id])}">
+                                <i class="fa fa-angle-right pr-10"></i> {$vo.post_title}
+                            </a>
+                        </li>
+                    </portal:articles>
+                </ul>
+            </empty>
+        </div>
+    </widget>
+
+    <widget name="last_articles">
+        <div class="blog-post">
+            <h3>{$widget.title}</h3>
+            <empty name="$widget.vars.last_articles_category_id">
+                没有设置文章分类，请在后台设置。
+                <else/>
+                <portal:articles limit="5" order="post.published_time DESC" categoryIds="$widget.vars.last_articles_category_id">
+                    <div class="media">
+                        <a class="pull-left" href="{:cmf_url('portal/Article/index', ['id'=>$vo.id])}">
+                            <img src="{$vo.more.thumbnail|default='__TMPL__/public/assets/img/newsicon.jpg'|cmf_get_image_url}">
+                        </a>
+                        <div class="media-body">
+                            <h5 class="media-heading">
+                                <a href="{:cmf_url('portal/Article/index', ['id'=>$vo.id])}">
+                                    {$vo.published_time|cmf_get_date='Y-m-d H:i'}
+                                </a>
+                            </h5>
+                            <p>
+                                <a href="{:cmf_url('portal/Article/index', ['id'=>$vo.id])}">
+                                    {$vo.post_title}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </portal:articles>
+            </empty>
+        </div>
+    </widget>
+</div>

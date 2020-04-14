@@ -1,0 +1,76 @@
+<extend name="public@base"/>
+<block name="body">
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>新用户注册</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li><a href="__ROOT__/">首页</a></li>
+                        <li class="active">用户注册</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+    <div class="registration-bg">
+        <div class="container">
+            <div class="form-signin wow fadeInUp">
+                <php>
+                    $mobile_tab_active=empty($theme_vars['enable_mobile'])?'':'active';
+                    $email_tab_active=empty($theme_vars['enable_mobile'])?'active':'';
+                </php>
+                <notempty name="theme_vars.enable_mobile">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" style="margin-bottom: 15px;">
+                        <li class="active"><a href="#mobile" data-toggle="tab">手机注册</a></li>
+                        <li><a href="#email" data-toggle="tab">邮箱注册</a></li>
+                    </ul>
+                </notempty>
+
+                <php>
+                    $is_open_registration = cmf_is_open_registration();
+                </php>
+                <div class="tab-content">
+                    <notempty name="theme_vars.enable_mobile">
+                        <div class="tab-pane login-wrap {$mobile_tab_active}" id="mobile">
+                            <form class="js-ajax-form" action="{:url('user/Register/doRegister')}" method="post">
+                                <input type="text" name="username" placeholder="手机号" class="form-control" id="js-mobile-input">
+                                <div style="position: relative;">
+                                    <input type="text" name="captcha" placeholder="验证码" class="form-control"
+                                           style="width: 100px;float: left;margin-right: 30px">
+                                    <captcha height="38" width="160" font-size="20"/>
+                                </div>
+                                <input type="password" name="password" placeholder="密码" class="form-control">
+                                <input type="password" name="re_password" placeholder="确认密码" class="form-control">
+                                <button class="btn btn-lg btn-login btn-block js-ajax-submit" type="submit">确定注册</button>
+                            </form>
+                        </div>
+                    </notempty>
+                    <div class="tab-pane login-wrap {$email_tab_active}" id="email">
+                        <form class="js-ajax-form" action="{:url('user/register/doRegister')}" method="post">
+                            <input type="text" name="username" placeholder="邮箱" class="form-control" id="js-email-input">
+                            <div style="position: relative;">
+                                <input type="text" name="captcha" placeholder="验证码" class="form-control"
+                                       style="width: 100px;float: left;margin-right: 30px">
+                                <captcha height="38" width="160" font-size="20"/>
+                            </div>
+                            <input type="password" name="password" placeholder="密码" class="form-control">
+                            <input type="password" name="re_password" placeholder="确认密码" class="form-control">
+                            <button class="btn btn-lg btn-login btn-block js-ajax-submit" type="submit">确定注册</button>
+                        </form>
+                    </div>
+                    <div class="registration login-wrap">
+                        已有账号? <a href="{:cmf_url('user/Login/index')}">点击此处登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--container end-->
+</block>

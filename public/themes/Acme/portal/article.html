@@ -1,0 +1,116 @@
+<extend name="public@base"/>
+<block name="head">
+    {__block__}
+    <style>
+        .ranking {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .blog-post img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <js href="__STATIC__/js/ueditor/ueditor.parse.min.js"/>
+</block>
+<block name="body">
+    <include file="public@breadcrumb"/>
+    <!--container start-->
+    <div class="container">
+        <div class="row">
+            <!--blog start-->
+            <div class="col-lg-9">
+                <div class="blog-item row">
+                    <div class="col-lg-2 col-sm-2">
+                        <div class="date-wrap">
+                            <span class="date">{$article.published_time|cmf_get_date='j'}</span>
+                            <span class="month">{$article.published_time|cmf_get_date='n月 Y'}</span>
+                        </div>
+                        <div class="text-right">
+                            <div class="author">来源：{$article.post_source|default='本站'}</div>
+                            <php>$tags = explode(',',$article['post_keywords']);</php>
+                            <notempty name="tags">
+                                <ul class="list-unstyled">
+                                    <foreach name="tags" item="vo">
+                                        <li><em>{$vo}</em></li>
+                                    </foreach>
+                                </ul>
+                            </notempty>
+                            <div class="st-view">
+                                <ul class="list-unstyled">
+                                    <li><a>{$article.post_hits} 查阅</a></li>
+                                    <li>
+                                        <a href="{:url('portal/Article/doLike',array('id'=>$article['id']))}" class="js-count-btn">
+                                            {$article.post_like} 赞
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{:url('user/favorite/add')}" class="js-favorite-btn"
+                                           data-title="{:base64_encode($article.post_title)}"
+                                           data-url="{:cmf_url_encode('portal/Article/index',array('id'=>$article['id']))}"
+                                           data-table="portal_post" data-id="{$article['id']}">
+                                            <i class="fa fa-star-o"></i> 收藏
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-10 col-sm-10">
+                        <notempty name="$article.more.thumbnail">
+                            <div class="blog-img gs">
+                                <img src="{$article.more.thumbnail|cmf_get_image_url}"/>
+                            </div>
+                        </notempty>
+                        <h1>{$article.post_title}</h1>
+                        <hook name="before_content" param="article"/>
+                        <div class="mar-b-30">{$article.post_content}</div>
+                        <div class="text-center">
+                            <ul class="pagination">
+                                {$article.page|default=''}
+                            </ul>
+                        </div>
+                        <php>
+                            $comment_hook_param=[
+                            'object_id'=>$article['id'],
+                            'table_name'=>'portal_post',
+                            'object_title'=>$article['post_title'],
+                            'url'=>cmf_url_encode('portal/Article/index',array('id'=>$article['id'],'cid'=>$category['id'])),
+                            'user_id'=>$article['user_id'],
+                            ];
+                            $comment=hook_one('comment',$comment_hook_param);
+                        </php>
+
+                        <if condition="empty($comment) && cmf_get_current_admin_id()">
+                            <div style="border: 1px dashed #ddd;min-height: 200px;padding-top: 50px;">
+                                <div class="alert alert-warning" role="alert">
+                                    此区域这为评论区，请安装评论插件！<br>
+                                    <em>注：普通用户不会看到此提示！</em>
+                                </div>
+                            </div>
+                        </if>
+                        {$comment}
+                    </div>
+                </div>
+            </div>
+
+            <!--右侧栏目-->
+            <div class="col-lg-3 mar-b-30">
+                <include file="public@right_side"/>
+            </div>
+            <!--blog end-->
+        </div>
+    </div>
+    <!--container end-->
+</block>
+<block name="scripts">
+    {__block__}
+    <script type="text/javascript">
+        $(function () {
+            uParse("#content", {rootPath: "__STATIC__/js/ueditor"});
+        });
+    </script>
+</block>
