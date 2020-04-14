@@ -1,0 +1,12 @@
+<div class="filters middle cates">
+  <div class="clearfix">
+    <div class=" ">
+      <ul class="filter-section category">
+          {{#each filters as |filter idx| }}
+        <li class="button-group" data-filter-group="category">    <a class="button button-no-round category-tab {{#if filter.active}}is-checked{{/if}}" data-filter="*" href="{{postByTermUrl filter}}">{{filter.name}}</a></li>
+          {{/each}}
+      </ul>
+
+    </div>
+  </div>
+</div>
