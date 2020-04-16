@@ -10,6 +10,32 @@
 <body class="body-white">
 <include file="public@header"/>
 <div class="container">
+  <widget name="article_categories">
+  <div class="filters middle cates">
+    <div class="clearfix">
+      <div class=" ">
+        <php>
+          $widget["vars"]["articles_category_root_id"] = empty($widget["vars"]["articles_category_root_id"])?1:$widget["vars"]["articles_category_root_id"];
+          $is_root_selected = ($widget["vars"]["articles_category_root_id"]==$category['id']);
+          $all_category_ids = array();
+          if($is_root_selected){  array_push($all_category_ids, $category['id']); }
+        </php>
+
+        <ul class="filter-section category">
+          <li> <a class="button button-no-round category-tab {$is_root_selected? 'is-checked': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$category['id']])}">全部</a></li></li>
+
+          <portal:allsubcategories categoryId="$widget.vars.articles_category_root_id">
+           <li class="button-group" data-filter-group="category">
+             <a class="button button-no-round category-tab {$vo.id==$category.id? 'is-checked': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$vo['id']])}">{$vo.name}</a></li>
+             <php> if($is_root_selected){ array_push($all_category_ids, $vo['id']);  } </php>
+           </portal:allsubcategories>
+         </ul>
+
+      </div>
+    </div>
+  </div>
+  </widget>
+
     <h2>{$category.name}</h2>
     <div class="row">
         <div class="col-md-12">
@@ -26,7 +52,7 @@
                 </php>
                 <portal:articles item="vo" where="$where" order="post.create_time DESC" page="$page"
                                  relation="categories"
-                                 categoryIds="$category.id"
+                                 categoryIds="$all_category_ids"
                                  returnVarName="articles_data">
                     <div class="list-boxes">
                         <h2><a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">{$vo.post_title}</a>

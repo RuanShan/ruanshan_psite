@@ -1,12 +1,19 @@
+<widget name="article tags">
 <div class="filters middle cates">
   <div class="clearfix">
     <div class=" ">
+      <php>
+          $widget["vars"]["article_category_root_id"] = empty($widget["vars"]["article_category_root_id"])?1:$widget["vars"]["article_category_root_id"];
+
+      </php>
       <ul class="filter-section category">
-          {{#each filters as |filter idx| }}
-        <li class="button-group" data-filter-group="category">    <a class="button button-no-round category-tab {{#if filter.active}}is-checked{{/if}}" data-filter="*" href="{{postByTermUrl filter}}">{{filter.name}}</a></li>
-          {{/each}}
-      </ul>
+        <portal:allsubcategories cid="$widget.vars.article_category_root_id">
+
+         <li class="button-group" data-filter-group="category">    <a class="button button-no-round category-tab {{#if filter.active}}is-checked{{/if}}" data-filter="*" href="{{postByTermUrl filter}}">{{filter.name}}</a></li>
+         </portal:allsubcategories>
+       </ul>
 
     </div>
   </div>
 </div>
+</widget>

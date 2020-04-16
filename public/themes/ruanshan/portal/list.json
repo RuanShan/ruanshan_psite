@@ -8,12 +8,12 @@
 
         },
         "widgets":{
-            "hottest_articles": {
-                "title": "热门文章",
+            "article_categories": {
+                "title": "文章分类",
                 "display": "1",
                 "vars": {
-                    "hottest_articles_category_id": {
-                        "title": "文章分类ID",
+                    "articles_category_root_id": {
+                        "title": "文章分类ROOT_ID",
                         "value": "",
                         "type": "text",
                         "dataSource": {
