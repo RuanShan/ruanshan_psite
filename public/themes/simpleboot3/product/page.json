@@ -1,0 +1,50 @@
+{
+    "name": "单页面",
+    "action": "product/Page/index",
+    "description": "单页面模板文件",
+    "order": 10.0,
+    "more": {
+        "widgets":{
+            "hottest_items": {
+                "title": "热门产品",
+                "display": "1",
+                "vars": {
+                    "hottest_items_category_id": {
+                        "title": "产品分类ID",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "product/category/index",
+                            "multi": true
+                        },
+                        "placeholder": "请选择分类",
+                        "tip": "",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "last_items": {
+                "title": "最新发布",
+                "display": "1",
+                "vars": {
+                    "last_items_category_id": {
+                        "title": "产品分类ID",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "product/category/index",
+                            "multi": true
+                        },
+                        "placeholder": "请选择分类",
+                        "tip": "",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
