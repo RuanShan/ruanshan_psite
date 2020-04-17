@@ -18,7 +18,7 @@
     <hook name="before_head_end"/>
 </head>
 <body class="body-white">
-<include file="public@nav"/>
+<include file="public@header"/>
 <div class="container tc-main">
     <div class="row">
         <div class="col-md-9">
@@ -127,10 +127,10 @@
 
     </div>
 
-    <include file="public@footer"/>
 </div>
-
+<include file="public@footer"/>
 <include file="public@scripts"/>
+<script src="__TMPL__/public/assets/js/opage.js"></script>
 <hook name="before_body_end"/>
 </body>
 </html>
