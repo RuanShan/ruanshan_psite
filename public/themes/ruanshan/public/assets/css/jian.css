@@ -263,6 +263,7 @@ li{ position:relative;}
 .green .col-btn.active div{background: #11ca5b;}
 .green .row-btn.active div{background: #11ca5b;}
 .green .color2{ color:#11ca5b;}
+.green .color-border{ border-color:#11ca5b;}
 
 
 .yellow .logo{  background-color: #dbb700;}
@@ -270,6 +271,7 @@ li{ position:relative;}
 .yellow .col-btn.active div{background: #dbb700;}
 .yellow .row-btn.active div{background: #dbb700;}
 .yellow .color2{ color:#dbb700}
+.yellow .color-border{ border-color:#dbb700}
 
 
 .blue .logo{  background-color: #00b3db;}
@@ -277,6 +279,7 @@ li{ position:relative;}
 .blue .col-btn.active div{background: #00b3db;}
 .blue .row-btn.active div{background: #00b3db;}
 .blue .color2{ color:#00b3db}
+.blue .color-border{ border-color:#00b3db}
 
 
 .red .logo{  background-color: #e13434;}
@@ -284,6 +287,7 @@ li{ position:relative;}
 .red .col-btn.active div{background: #e13434;}
 .red .row-btn.active div{background: #e13434;}
 .red .color2{ color:#e13434}
+.red .color-border{ border-color:#e13434}
 
 
 

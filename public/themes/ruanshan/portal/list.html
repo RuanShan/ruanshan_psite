@@ -7,26 +7,26 @@
     <include file="public@head"/>
     <hook name="before_head_end"/>
 </head>
-<body class="body-white">
+<body class="body">
 <include file="public@header"/>
-<div class="container">
+<div class="  cases">
   <widget name="article_categories">
-  <div class="filters middle cates">
-    <div class="clearfix">
+  <div class="filters  ">
+    <div class="clearfix middle">
       <div class=" ">
         <php>
-          $widget["vars"]["articles_category_root_id"] = empty($widget["vars"]["articles_category_root_id"])?1:$widget["vars"]["articles_category_root_id"];
-          $is_root_selected = ($widget["vars"]["articles_category_root_id"]==$category['id']);
+          $root_id = empty($widget["vars"]["articles_category_root_id"])?1:$widget["vars"]["articles_category_root_id"];
+          $is_root_selected = ($root_id==$category['id']);
           $all_category_ids = array();
           if($is_root_selected){  array_push($all_category_ids, $category['id']); }
         </php>
 
         <ul class="filter-section category">
-          <li> <a class="button button-no-round category-tab {$is_root_selected? 'is-checked': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$category['id']])}">全部</a></li></li>
+          <li> <a class="button button-no-round category-tab {$is_root_selected? 'is-checked color-border': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$root_id])}">全部</a></li></li>
 
           <portal:allsubcategories categoryId="$widget.vars.articles_category_root_id">
            <li class="button-group" data-filter-group="category">
-             <a class="button button-no-round category-tab {$vo.id==$category.id? 'is-checked': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$vo['id']])}">{$vo.name}</a></li>
+             <a class="button button-no-round category-tab {$vo.id==$category.id? 'is-checked color-border': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$vo['id']])}">{$vo.name}</a></li>
              <php> if($is_root_selected){ array_push($all_category_ids, $vo['id']);  } </php>
            </portal:allsubcategories>
          </ul>
@@ -35,10 +35,9 @@
     </div>
   </div>
   </widget>
-
-    <h2>{$category.name}</h2>
-    <div class="row">
-        <div class="col-md-12">
+  <div class="middle">
+    <div class="row  case-list">
+        <div >
             <div class="">
                 <php>
                     $where= function($query){
@@ -54,31 +53,47 @@
                                  relation="categories"
                                  categoryIds="$all_category_ids"
                                  returnVarName="articles_data">
-                    <div class="list-boxes">
-                        <h2><a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">{$vo.post_title}</a>
-                        </h2>
-                        <p>{$vo.post_excerpt}</p>
-                        <div>
-                            <div class="pull-left">
-                                <div class="list-actions">
-                                    <a href="javascript:;"><i class="fa fa-eye"></i><span>{$vo.post_hits}</span></a>
-                                    <a href="{:url('portal/Article/doLike',array('id'=>$vo['id']))}"
-                                       class="js-count-btn"><i class="fa fa-thumbs-up"></i><span class="count">{$vo.post_like}</span></a>
-                                    <a href="{:url('user/Favorite/add',array('id'=>$vo['id'],'cid'=>$category['id']))}"
-                                       class="js-favorite-btn"
-                                       data-id="{$vo.id}"
-                                       data-table="portal_post"
-                                       data-title="{:base64_encode($vo.post_title)}"
-                                       data-url="{:cmf_url_encode('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}"
-                                    >
-                                        <i class="fa fa-star-o"></i>
-                                    </a>
+
+                      <div class="  activity-item">
+                        <div class="col-md-6 col-sm-6">
+                          <div class="list-item">
+                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}" class="">
+                              <h3   class="item-title ellipsis">
+                                {$vo.post_title}
+                              </h3>
+                              <div class="img-box">
+                                <img src="{$vo.thumbnail|default=$vo.more.thumbnail|cmf_get_image_url}"  >
+                              </div>
+                              <div class="wrap ">
+
+                                <div class="icon-msg clearfix">
+                                  <div title="分类" class="icon-msg-item">
+                                    <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                                    <volist name="vo.categories" id="category">
+
+
+                                      <span class="val"> {$category.name} </span>
+                                    </volist>
+                                  </div>
+                                  <div title="客户" class="icon-msg-item pull-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="val">
+                                      {$vo.post_source}
+                                    </span>
+                                  </div>
+                                  <div title="访问量" class="icon-msg-item hide">
+                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <span class="val"> {$vo.post_hits}</span>
+                                  </div>
                                 </div>
-                            </div>
-                            <a class="btn btn-warning btn-sm pull-right"
-                               href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">查看更多</a>
+
+                              </div>
+
+                            </a>
+                          </div>
+
                         </div>
-                    </div>
+
+                       </div>
+
+
                 </portal:articles>
 
             </div>
@@ -88,7 +103,7 @@
         </div>
 
     </div>
-
+  </div>
 </div>
 <include file="public@footer"/>
 
