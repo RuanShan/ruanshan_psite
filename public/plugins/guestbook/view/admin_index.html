@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <include file="public/head"/>
+    <title>留言板后台管理</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>留言板管理</a></li>
+    </ul>
+    <div class="common-form">
+        <form method="post" class="js-ajax-form" action="#">
+            <div class="table_list">
+                <table width="100%" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th width="50">ID</th>
+                        <th width="100">姓名</th>
+                        <th width="160">电话</th>
+                        <th width="160">EMAIL</th>
+                        <th>主题</th>
+                        <th width="130">时间</th>
+                        <th width="120">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <foreach name="guestbook" item="vo">
+                        <tr>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.name}</td>
+                            <td>{$vo.tel}</td>
+                            <td>{$vo.email}</td>
+                            <td>{$vo.subject}</td>
+                            <td>{:date('Y-m-d H:i',$vo['create_time'])}</td>
+                            <td>
+                                <a href="javascript:parent.openIframeLayer('{:cmf_plugin_url('guestbook://AdminIndex/detail',['id'=>$vo['id']])}','{$vo.name}的留言详细信息',{area:['60%','70%']});">查看</a> |
+                                <a href="{:cmf_plugin_url('guestbook://AdminIndex/delete',['id'=>$vo['id']])};" class="js-ajax-delete">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+                <div class="pagination">{$page}</div>
+            </div>
+        </form>
+    </div>
+</div>
+<include file="public/scripts"/>
+</body>
+</html>

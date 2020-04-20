@@ -1,0 +1,26 @@
+<!-- Plugins Guestbook JS -->
+<script src="__STATIC__/js/layer/layer.js"></script>
+<script src="__STATIC__/js/ajaxForm.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#guestbook-submit').click(function () {
+            $('#guestbook-form').ajaxSubmit({
+                url: "{:cmf_plugin_url('guestbook://Index/addMsg')}",
+                type: "post",
+                success: function (data) {
+                    if (data.code == 0) {
+                        layer.msg(data.msg);
+                    } else {
+                        $('#MessageSent').removeClass("hidden");
+                        layer.msg(data.msg, function () {
+                            setTimeout(function () {
+                                parent.location.reload();
+                            }, 300);
+                        });
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>

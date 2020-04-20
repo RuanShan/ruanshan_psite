@@ -1,0 +1,48 @@
+<div class="section section-guestbook">
+    <p class="lead">{$desc}</p>
+    <div class="alert alert-success hidden" id="MessageSent">
+        {$messagesent}
+    </div>
+    <div class="alert alert-danger hidden" id="MessageNotSent">
+        Oops! Something went wrong, please verify that you are not a robot or refresh the page and try again.
+    </div>
+    <div class="contact-form">
+        <form id="guestbook-form" class="no-mar" role="form">
+            <div class="form-group sy-guestbook">
+                <label for="name">{:lang('name')} <span class="require-item">*</span></label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="">
+                <i class="fa fa-user form-control-guestbook"></i>
+            </div>
+            <div class="form-group sy-guestbook">
+                <label for="name">{:lang('tel')}<span class="require-item">*</span></label>
+                <input type="text" class="form-control" id="tel" name="tel" placeholder="">
+                <i class="fa fa-phone form-control-guestbook"></i>
+            </div>
+            <div class="form-group sy-guestbook">
+                <label for="email">{:lang('email')}<span class="require-item">*</span></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="">
+                <i class="fa fa-envelope form-control-guestbook"></i>
+            </div>
+            <div class="form-group sy-guestbook">
+                <label for="subject">{:lang('subject')}<span class="require-item">*</span></label>
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="">
+                <i class="fa fa-navicon form-control-guestbook"></i>
+            </div>
+            <div class="form-group sy-guestbook">
+                <label for="message">{:lang('message')}<span class="require-item">*</span></label>
+                <textarea class="form-control" rows="6" id="message" name="message" placeholder=""></textarea>
+                <i class="fa fa-pencil form-control-guestbook"></i>
+            </div>
+            <div class="form-group sy-guestbook">
+                <label for="message">{:lang('code')}<span class="require-item">*</span></label>
+                <div class="sy-guestbook">
+                    <input type="text" name="captcha" placeholder="{:lang('code')}" class="form-control captcha"
+                           style="width: 170px;float: left;margin-right: 30px">
+                    <captcha height="38" width="160" font-size="20"/>
+                </div>
+            </div>
+            <div class="g-recaptcha"></div>
+            <input id="guestbook-submit" type="submit" value="{:lang('submit')}" class="submit-button btn btn-default">
+        </form>
+    </div>
+</div>

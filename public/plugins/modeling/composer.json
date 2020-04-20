@@ -1,0 +1,14 @@
+{
+    "name": "thinkcmf/plugins-modeling",
+    "description": "ThinkCMF modeling plugin",
+    "type": "cmf-plugin",
+    "license": "apache2.0",
+    "authors": [
+        {
+            "name": "david",
+            "email": "david@ruanshan.com"
+        }
+    ],
+    "require": {
+    }
+}
