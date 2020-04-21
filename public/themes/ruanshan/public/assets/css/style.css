@@ -808,3 +808,105 @@ ul.tc-photos {
 .about-us .tg-page-header {
     background-color: #2092D1;
 }
+
+/* posts detail */
+.cases .page-body {
+    border: none;
+    margin: 0;
+}
+.entry-meta>div {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.entry-meta {
+  margin: 0 0 1.5em;
+  border: 0 solid #e9ecef;
+}
+
+.entry-meta .term {
+  margin: 0 0 0 0.4em;
+}
+
+.hentry {
+  margin: 0 0 5em;
+  border: 0 solid #e9ecef;
+}
+
+.entry-content {
+  margin: 0 0 3em;
+}
+
+.entry-title {
+  margin: 0 0 .5em;
+  font-size: 2.25rem;
+  word-wrap: break-word;
+}
+
+.post-thumbnail {
+  margin: 0 0 1.5em;
+}
+
+.post-thumbnail img {
+  width: 100%;
+}
+
+.posts.site-content {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.post-detail .meta-wrapper {
+    margin-bottom: 42px;
+    margin-top: 18px;
+}
+.post-detail .blog-post_title {
+    line-height: 1.32;
+    margin-bottom: 0;
+    margin-top: 16px;
+    font-size: 36px;
+}
+.post-detail .content-text {
+    overflow: hidden;
+    font-size: 16px;
+    font-family: 'Helvetica Neue',Helvetica,'Lucida Grande','Luxi Sans',Arial,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','Wenquanyi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono',LiGothicMed;
+    line-height: 2;
+    color: #3a3a3a;
+}
+
+.post-detail .recommendation {
+    border-top: 1px solid #dfdfdf;
+    padding-top: 25px;
+    margin-top: 20px;
+    color: #979797;
+}
+.recommendation{ width:100%; height:auto; overflow:hidden; margin-bottom:45px; }
+.reblock{ display:block; width:32.6%; float:left; color:#555;}
+.reblock:nth-child(2){ margin-right:1%}
+.reblock:nth-child(4){ margin-left:1%}
+.reblock h2{ font-size:14px; margin-top:5px; padding: 0 2px 0 2px; }
+.re-img{ border: 1px solid #ddd; padding: 3px; box-sizing: border-box;}
+.re-img img{ width:100%; height:100% !important; display: block;}
+.recommendation h2{    font-size: 16px; font-weight: bolder; margin: 15px 0 15px 0;}
+
+/************* 适配 **************/
+
+@media screen and (max-width: 768px) {
+
+    .cases .page-body {
+        margin-top: 50px;
+    }
+
+  .reblock{ width:100%; margin:0 0 20px 0;}
+  .re-img{ width:52%; float:left}
+  .reblock h2{ width: 45%; float: left; padding:0 0 0 3%;}
+  .recommendation { margin-bottom: 25px;}
+  .footer{  padding-bottom:10px; }
+
+}
+/*** pad 竖屏 ***/
+@media (max-width: 932px){
+}
+/*** pad 横屏 ***/
+@media (max-width: 1070px){
+}
