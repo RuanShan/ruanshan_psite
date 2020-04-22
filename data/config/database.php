@@ -9,11 +9,11 @@ return [
     // 服务器地址
     'hostname' => '127.0.0.1',
     // 数据库名
-    'database' => 'cmf',
+    'database' => Env::get('database_name', 'cmf'),
     // 用户名
-    'username' => 'root',
+    'username' => Env::get('database_user', 'user'),
     // 密码
-    'password' => 'root',
+    'password' => Env::get('database_password', 'password'), 
     // 端口
     'hostport' => '3306',
     // 数据库编码默认采用utf8
