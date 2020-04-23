@@ -439,7 +439,7 @@ li{ position:relative;}
 .contact { height: 600px;}
 /*公司介绍*/
 .com-info .menu{ margin-top:0;}
-.page-header.com-info{ height:auto}
+.page-header.com-info{ height: 50px;}
 .com-info .header{ height:50px;}
 .com-info .info-content{width: 94%; padding: 0 3% 0 3%;}
 .com-info .part1 .info-content { right: 50px; width: 94%; right: 0; padding: 0 3% 0 3%;}
