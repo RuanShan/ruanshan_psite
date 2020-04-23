@@ -785,8 +785,9 @@ ul.tc-photos {
   .cases .wrap{
     padding-top: 10px;
   }
-  .cases .filters {
-      margin-bottom: 0;
+  .cases .filters {      
+      margin-bottom: 20px;
+      padding: 50px 0 0 0;
   }
   .cases .filters .search{
     display: none;
