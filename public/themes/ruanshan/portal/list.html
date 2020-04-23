@@ -16,19 +16,30 @@
       <div class=" ">
         <php>
           $root_id = empty($widget["vars"]["articles_category_root_id"])?1:$widget["vars"]["articles_category_root_id"];
+          $param['where'] = ['parent_id'=>[$root_id]];
+          $subcategories = \app\portal\service\ApiService::categories($param);
+
           $is_root_selected = ($root_id==$category['id']);
-          $all_category_ids = array();
-          if($is_root_selected){  array_push($all_category_ids, $category['id']); }
+          $all_category_ids = [];
+          if($is_root_selected){
+            foreach($subcategories as $cat){
+              array_push($all_category_ids, $cat['id']);
+            }
+          }else{
+            array_push($all_category_ids, $category['id']);
+          }
+
         </php>
 
         <ul class="filter-section category">
           <li> <a class="button button-no-round category-tab {$is_root_selected? 'is-checked color-border': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$root_id])}">全部</a></li></li>
 
-          <portal:allsubcategories categoryId="$widget.vars.articles_category_root_id">
+          <volist name="subcategories"  id="vo">
+
            <li class="button-group" data-filter-group="category">
-             <a class="button button-no-round category-tab {$vo.id==$category.id? 'is-checked color-border': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$vo['id']])}">{$vo.name}</a></li>
-             <php> if($is_root_selected){ array_push($all_category_ids, $vo['id']);  } </php>
-           </portal:allsubcategories>
+             <a class="button button-no-round category-tab {$vo.id==$category.id? 'is-checked color-border': ''}" data-filter="*" href="{:cmf_url('portal/List/index',['id'=>$vo['id']])}">{$vo.name}</a>
+           </li>
+          </volist>
          </ul>
 
       </div>
@@ -69,10 +80,11 @@
                                 <div class="icon-msg clearfix">
                                   <div title="分类" class="icon-msg-item">
                                     <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                                    <volist name="vo.categories" id="category">
-
-
-                                      <span class="val"> {$category.name} </span>
+                                    <php>   </php>
+                                    <volist name="subcategories" id="vc">
+                                      <eq name="vc.id" value="$vo['category_id']">
+                                      <span class="val"> {$vc.name} </span>
+                                      </eq>
                                     </volist>
                                   </div>
                                   <div title="客户" class="icon-msg-item pull-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="val">

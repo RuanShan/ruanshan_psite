@@ -13,7 +13,7 @@ return [
     // 用户名
     'username' => Env::get('database_user', 'user'),
     // 密码
-    'password' => Env::get('database_password', 'password'), 
+    'password' => Env::get('database_password', 'password'),
     // 端口
     'hostport' => '3306',
     // 数据库编码默认采用utf8
@@ -22,4 +22,6 @@ return [
     'prefix'   => 'cmf_',
     "authcode" => '4hdlVxuqmRVBRxD2io',
     //#COOKIE_PREFIX#
+    'debug' => Env::get('database_debug', false),
+
 ];
