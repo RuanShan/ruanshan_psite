@@ -896,16 +896,19 @@ ul.tc-photos {
 
 @media screen and (max-width: 768px) {
 
-    .cases .page-body {
-        margin-top: 50px;
-    }
+  .cases .page-body {
+      margin-top: 50px;
+  }
 
   .reblock{ width:100%; margin:0 0 20px 0;}
   .re-img{ width:52%; float:left}
   .reblock h2{ width: 45%; float: left; padding:0 0 0 3%;}
   .recommendation { margin-bottom: 25px;}
   .footer{  padding-bottom:10px; }
-
+  /* post detail */
+  .post-detail .blog-post_title {
+    font-size: 18px;
+  }
 }
 /*** pad 竖屏 ***/
 @media (max-width: 932px){
