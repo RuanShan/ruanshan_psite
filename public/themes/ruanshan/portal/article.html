@@ -29,14 +29,14 @@
       </div>
       <div class="meta-wrapper entry-meta text-muted">
         <div clss="item">
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {$article.post_source}
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {$article.post_source|default='Ruanshan'}
         </div>
         <div clss="item">
           <span class="glyphicon glyphicon-time" aria-hidden="true"></span>{:date('Y-m-d H:i',$article.published_time)}
         </div>
         <div clss="item">
           <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
-            <span class="term"> {$category.name} </span>
+            <a href="{:cmf_url('portal/List/index',['id'=>$category['id']])}"> <span class="term"> {$category.name} </span></a>
         </div>
       </div>
     </div>

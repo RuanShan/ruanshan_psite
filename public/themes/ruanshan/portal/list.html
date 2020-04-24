@@ -72,24 +72,30 @@
                               <h3   class="item-title ellipsis">
                                 {$vo.post_title}
                               </h3>
+                               </a>
                               <div class="img-box">
-                                <img src="{$vo.thumbnail|default=$vo.more.thumbnail|cmf_get_image_url}"  >
+                              <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}" class="">  <img src="{$vo.thumbnail|default=$vo.more.thumbnail|cmf_get_image_url}"  >                            </a>
                               </div>
                               <div class="wrap ">
 
                                 <div class="icon-msg clearfix">
                                   <div title="分类" class="icon-msg-item">
-                                    <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                                    <php>   </php>
+                                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                                     <volist name="subcategories" id="vc">
                                       <eq name="vc.id" value="$vo['category_id']">
-                                      <span class="val"> {$vc.name} </span>
+                                      <span class="val">  {$vc.name} </span>
                                       </eq>
                                     </volist>
                                   </div>
-                                  <div title="客户" class="icon-msg-item pull-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="val">
-                                      {$vo.post_source}
-                                    </span>
+                                  <div title="关键字" class="icon-msg-item pull-right"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                                      <php>$tags = explode(',',$vo['post_keywords']);</php>
+                                      <notempty name="tags">
+                                          <ul class="list-unstyled clearfix">
+                                              <foreach name="tags" item="keyword">
+                                                  <li class="pull-right"><span class="val">{$keyword}</span></li>
+                                              </foreach>
+                                          </ul>
+                                      </notempty>
                                   </div>
                                   <div title="访问量" class="icon-msg-item hide">
                                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <span class="val"> {$vo.post_hits}</span>
@@ -98,7 +104,6 @@
 
                               </div>
 
-                            </a>
                           </div>
 
                         </div>

@@ -79,5 +79,6 @@
       'id' => '\\d+',
     ),
   ),
+  'gobackend$' => 'admin/Index/index',
   'register$' => 'user/Register/index',
 );
