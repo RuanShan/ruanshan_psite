@@ -11,6 +11,7 @@ class ComposerStaticInit5bfecc6fb5e853e2f790c7db297fb8ee
         '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
         '22ae91e0a0181f0ca9a02b9dde87e558' => __DIR__ . '/..' . '/thinkcmf/cmf/src/common.php',
         '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
+        'dc1275c308c5b416beb314b6317daca2' => __DIR__ . '/..' . '/overtrue/pinyin/src/const.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -47,6 +48,10 @@ class ComposerStaticInit5bfecc6fb5e853e2f790c7db297fb8ee
         'P' => 
         array (
             'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'O' => 
+        array (
+            'Overtrue\\Pinyin\\' => 16,
         ),
     );
 
@@ -102,6 +107,10 @@ class ComposerStaticInit5bfecc6fb5e853e2f790c7db297fb8ee
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'Overtrue\\Pinyin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/overtrue/pinyin/src',
         ),
     );
 

@@ -10,4 +10,5 @@ return array(
     '1cfd2761b63b0a29ed23657ea394cb2d' => $vendorDir . '/topthink/think-captcha/src/helper.php',
     '22ae91e0a0181f0ca9a02b9dde87e558' => $vendorDir . '/thinkcmf/cmf/src/common.php',
     '9b552a3cc426e3287cc811caefa3cf53' => $vendorDir . '/topthink/think-helper/src/helper.php',
+    'dc1275c308c5b416beb314b6317daca2' => $vendorDir . '/overtrue/pinyin/src/const.php',
 );

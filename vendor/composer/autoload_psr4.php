@@ -19,4 +19,5 @@ return array(
     'app\\' => array($vendorDir . '/thinkcmf/cmf-app/src'),
     'api\\' => array($vendorDir . '/thinkcmf/cmf-api/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
+    'Overtrue\\Pinyin\\' => array($vendorDir . '/overtrue/pinyin/src'),
 );
