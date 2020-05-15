@@ -1,0 +1,34 @@
+<include file="public/header" />
+<block name="headerjs"></block>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <include file="public/_nav" active="column"/>
+        <div class="col-sm-8 text-right">
+            <a class="btn btn-success" href="{:cmf_plugin_url('Modules://AdminColumn/add',array('modules_id'=>$modules_id))}">+ 添加栏目</a>
+        </div>
+    </ul>
+
+    <br/>
+    <div class="row">
+        <div class="col-md-2 tabbable tabs-left">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-pills nav-stacked" role="tablist">
+                <volist name="authmodules" id="vo">
+                    <li <if condition="$vo['id'] eq $modules_id">class="active"</if> >
+                    <a  href="{:cmf_plugin_url('Modules://AdminColumn/index',array('modules_id'=>$vo['id']))}"> {$vo.name}</a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+
+        <div class="col-md-10">
+            <block name="form"></block>
+        </div>
+    </div>
+</div>
+<script src="__PLUGIN_TMPL__/public/assets/js/admin.js"></script>
+<block name="footerjs"></block>
+</body>
+</html>

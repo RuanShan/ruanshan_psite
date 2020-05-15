@@ -1,0 +1,113 @@
+<include file="public/header"/>
+</head>
+<body>
+<php>
+    //关联表时，传递其关联字段。
+    $urlParam = ['modules_id'=>$modules_id, 'table_name'=>$table_name];
+    if(isset($itemid) && $itemid) $urlParam['itemid'] = $itemid;
+    if(isset($modules_simple) && $modules_simple) $urlParam['modules_simple'] = $modules_simple;
+</php>
+<div class="wrap js-check-wrap" <if condition="isset($urlParam['modules_simple'])">style="padding-top:0;"</if> >
+    <!-- 内容导航 -->
+    <if condition="!isset($urlParam['modules_simple'])"><!-- 简单模型是弹出框或者iframe,因此不需要顶部导航。-->
+    <ul class="nav nav-tabs">
+        <foreach name="allTables" key="table" item="field">
+            <php>if($field['relate_level']==1) continue;</php>
+            <li <if condition="$table_name eq $table">class="active"</if> >
+            <a href="{:cmf_plugin_url('Modules://Content/index',['modules_id'=>$modules_id, 'table_name'=>$table])}"
+               alt="{$field['Comment']}">{$field['Comment']}<if condition="$field['relate_level'] eq 2">列表</if></a>
+            </li>
+            <if condition="empty($field['pinyin'])">
+                <li><a href="{:cmf_plugin_url('Modules://Content/edit',['modules_id'=>$modules_id,'table_name'=>$table])}">添加内容</a></li>
+            </if>
+        </foreach>
+    </ul>
+    </if>
+
+    <!-- 搜索 -->
+    <form class="well form-inline margin-top-10" method="post" action="{:cmf_plugin_url('Modules://Content/index', $urlParam)}">
+        <input type="hidden" name="modules_id" value="{$modules_id}">
+        <input type="hidden" name="table_name" value="{$table_name}">
+        <php>
+            foreach($control_search as $k=>$v){
+                if($v['name']=='itemid' && isset($urlParam['itemid'])){
+                    echo "<input type='hidden' name='itemid' value='". $urlParam['itemid'] ."'/>";
+                    continue;
+                }
+                \plugins\modules\lib\SearchForm::start($v,$table_name);
+            }
+        </php>
+        <div class="form-group text-right" style="margin-left: 15px;">
+            <input type="submit" class="btn btn-primary" value="搜索"/>
+            <a class="btn btn-success"  href="{:cmf_plugin_url('Modules://Content/edit',$urlParam)}"> 添加数据</a>
+        </div>
+    </form>
+
+
+    <!-- 内容列表 -->
+    <form class="js-ajax-form" action="" method="post">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <!-- 标题栏输出 -->
+                <php>
+                    foreach($control_list as $v){
+                        \plugins\modules\lib\ListForm::startTitle($v,$table_name);
+                    }
+                </php>
+                <th width="200">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="items" item="vo">
+                <tr>
+                    <td>
+                        <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}" title="ID:{$vo.id}">
+                    </td>
+                    <php>
+                        \plugins\modules\lib\ListForm::addData($vo);//把内容初始化进去
+                        foreach($control_list as $v){
+                            \plugins\modules\lib\ListForm::start($v);
+                        }
+                    </php>
+                    <td>
+                        <!--<a href="javascript:parent.openIframeLayer('{:cmf_plugin_url('Modules://Content/edit',array('id'=>$vo['id'],'modules_id'=>$modules_id,'table_name'=>$table_name))}','内容编辑',{});">编辑</a> |-->
+						<a href="{:cmf_plugin_url('Modules://Content/edit', array('id'=>$vo['id']) + $urlParam)}">编辑</a> |
+                        <if condition="$is_main_table">
+                            <foreach name="allTables" key="table" item="field">
+                                <if condition="$table neq $table_name">
+                                    <if condition="$field['relate_level'] eq 2">
+                                        <a href="{:cmf_plugin_url('Modules://Content/index',array('itemid'=>$vo['id'],'modules_id'=>$modules_id,'table_name'=>$table))}">{$field['Comment']}</a> |
+                                    </if>
+                                </if>
+                            </foreach>
+                        </if>
+                        <a href="{:cmf_plugin_url('Modules://Content/delete',array('ids'=>$vo['id']) + $urlParam)}" class="js-ajax-delete">删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+
+    <div class="navbar navbar-fixed-bottom" style="margin-left: 15px;">
+        <if condition="isset($urlParam['modules_simple'])"><!-- 简单模型是弹出框或者iframe,因此不需要顶部导航。-->
+            <a class="btn btn-default" href="javascript:parent.layer.close(parent.layer.getFrameIndex(window.name));">关闭</a>
+        <else />
+            <if condition="isset($urlParam['itemid'])">
+            <a class="btn btn-primary" href="{:cmf_plugin_url('Modules://Content/edit',
+                array('id'=>$urlParam['itemid'], 'table_name'=>rtrim($table_name,'_'.$table_pinyin)) + $urlParam)}">返回主编辑页</a>
+            </if>
+            <a class="btn btn-default" href="{:cmf_plugin_url('Modules://Content/index', array('table_name'=>rtrim($table_name,'_'.$table_pinyin)) + $urlParam)}">返回列表</a>
+        </if>
+    </div>
+</div>
+<script src="__PLUGIN_TMPL__/public/assets/js/admin.js"></script>
+</body>
+</html>

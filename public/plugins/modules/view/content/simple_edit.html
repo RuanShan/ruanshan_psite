@@ -1,0 +1,92 @@
+<include file="public/header"/>
+<style>
+    .container{margin-left: 0px;margin-right: 0px;}
+</style>
+</head>
+<body>
+<php>
+    //关联表时，传递其关联字段。
+    $urlParam = ['modules_id'=>$modules_id, 'table_name'=>$table_name];
+    if(isset($itemid) && $itemid) $urlParam['itemid'] = $itemid;
+    if(isset($modules_simple) && $modules_simple) $urlParam['modules_simple'] = $modules_simple;
+</php>
+<div class="wrap js-check-wrap">
+    <!-- 内容导航 -->
+    <if condition="!isset($urlParam['modules_simple'])"><!-- 简单模型是弹出框或者iframe,因此不需要顶部导航。-->
+        <ul class="nav nav-tabs">
+            <foreach name="allTables" key="table" item="field">
+                <php>if($field['relate_level']==1) continue;</php>
+                <li <if condition="$table_name eq $table">class="active"</if> >
+                <a href="{:cmf_plugin_url('Modules://Content/index',['modules_id'=>$modules_id, 'table_name'=>$table])}"
+                   alt="{$field['Comment']}">{$field['Comment']}<if condition="$field['relate_level'] eq 2">列表</if></a>
+                </li>
+                <if condition="empty($field['pinyin'])">
+                    <li><a href="{:cmf_plugin_url('Modules://Content/edit',['modules_id'=>$modules_id,'table_name'=>$table])}">添加内容</a></li>
+                </if>
+            </foreach>
+        </ul>
+    </if>
+
+    <form action="{:cmf_plugin_url('Modules://content/editPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <input type="hidden" name="modules_id" value="{$modules_id}">
+        <input type="hidden" name="table_name" value="{$table_name}">
+        <if condition="isset($id)"><input type="hidden" name="id" value="{$id}"></if>
+        <if condition="isset($urlParam['itemid'])"><input type="hidden" name="itemid" value="{$urlParam['itemid']}"></if>
+        <if condition="isset($urlParam['modules_simple'])"><input type="hidden" name="modules_simple" value="{$urlParam['modules_simple']}"></if>
+
+        <div class="row">
+            <div class="col-md-10">
+                <div class="tab-content">
+                    <php>\plugins\modules\lib\EditForm::init($allFieldName, $content, "__STATIC__");</php>
+                    <foreach name="allTables" key="table" item="val">
+                        <php>if($table_name != $table) continue;</php>
+                        <div id="tab-{$table}" class="tab-pane <php>if($table==$table_name) echo 'active';</php>" >
+                            <if condition="!empty($val['control_edit'])">
+                                <div class="row">
+                                    <div class="col-md-9"><!-- 这里是动态配置左边内容 -->
+                                        <php>
+                                            if(is_array($val['control_edit']))
+                                            foreach($val['control_edit'] as $k=>$v){
+                                                if($v['name']=='itemid' && isset($urlParam['itemid'])){
+                                                    echo "<input type='hidden' name='post[".$table."][itemid]' value='". $urlParam['itemid'] ."'/>";
+                                                    unset($val['control_edit'][$k]);continue;
+                                                }
+                                                if(!isset($v['position']) || $v['position']!='right'){
+                                                    \plugins\modules\lib\EditForm::start($v,$table);
+                                                }
+                                            }
+                                        </php>
+                                    </div>
+                                    <div class="col-md-3"><!-- 这里是动态配置右边内容-->
+                                        <table class="table table-bordered">
+                                            <php>
+                                                if(is_array($val['control_edit']))
+                                                    foreach($val['control_edit'] as $k=>$v){
+                                                    if(isset($v['position']) && $v['position']=='right'){
+                                                        \plugins\modules\lib\EditForm::start($v,$table);
+                                                    }
+                                                }
+                                            </php>
+                                        </table>
+                                    </div>
+                                </div>
+                            <else />
+                                未配置任何字段!
+                            </if>
+                        </div>
+                    </foreach><!--allFields end (主表、一对一、一对多)-->
+
+                </div><!-- tab-content && Tab panes end-->
+            </div><!--col-md-10  end-->
+        </div>
+
+        <br/><br/>
+        <div class="navbar navbar-fixed-bottom" style="margin-left: 15px;">
+            <button type="submit" class="btn btn-primary js-ajax-submit">保存</button>
+            <a class="btn btn-default" href="{:cmf_plugin_url('Modules://content/index', $urlParam)}">返回</a>
+        </div>
+    </form>
+</div>
+<script src="__PLUGIN_TMPL__/public/assets/js/admin.js"></script>
+</body>
+</html>

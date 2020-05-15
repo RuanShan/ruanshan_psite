@@ -1,0 +1,43 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <include file="public/_nav" active="module"/>
+        <li class="active" ><a>编辑模块</a></li>
+        <div class="col-sm-8 text-right">
+            <a class="btn btn-success" href="{:cmf_plugin_url('Modules://AdminIndex/add')}">+ 添加一个模块</a>
+        </div>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:cmf_plugin_url('Modules://AdminIndex/editPost')}">
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="form-required">*</span>名称:</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="hidden" name="id" value="{$id}">
+                <input type="text" class="form-control" name="name" value="{$name}">
+                <input type="hidden" value="{$name}" name="old_name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="form-required"></span>拼音(不可修改):</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" name="pinyin" value="{$pinyin}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">备注:</label>
+            <div class="col-md-6 col-sm-10">
+                <textarea class="form-control" name="remark" >{$remark}</textarea>
+            </div>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary   js-ajax-submit">{:lang("SAVE")}</button>
+            <a class="btn btn-default" href="{:cmf_plugin_url('Modules://AdminIndex/index')}">返回</a>
+        </div>
+    </form>
+
+</div>
+<script src="__PLUGIN_TMPL__/public/assets/js/admin.js"></script>
+</body>
+</html>
